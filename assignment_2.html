@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>Assignment 2 - Distributions</title>
+    <meta name="author" content="Yazan Aakel"/>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/x-icon" href="images/molecules.ico">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.js"></script>
+    <script src="./js/scripts.js"></script>
+</head>
+<body>
+
+<div id="particles-js">
+    <div class="container">
+        <div class="row top">
+
+            <div class="twelve column">
+
+                <section id="bar" class="bar section-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="section-title">
+                                    <h1>Assignment 2 - Distributions</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <ul class="bar">
+
+                                <li class="filter active" data-filter=".histogram">Histogram</li>
+
+                                <li class="filter" data-filter=".boxplot">Boxplot</li>
+                                <li class="filter" data-filter=".scatter">Scatter Plot</li>
+                                <li class="filter" data-filter=".multi_scatter">Multi Scatter Plot</li>
+
+                                <li class="filter" data-filter=".bubble">Bubble Chart</li>
+
+                            </ul>
+                        </div>
+
+                        <div class="bar-inner">
+                            <div class="row bar-posts">
+                                <div class="col-md-12 col-sm-4 mix histogram">
+
+                                    <h2>Description</h2>
+                                    <p>The distribution of the heights of trees in the municipality of Trento with the availability to change the bin size as below</p>
+                                    <br>
+
+                                        <div class="bin-container">
+
+                                            <p>Bin Size</p>
+                                            <div class="number-input">
+
+                                                <button id="minus"></button>
+                                                <input id="binSize" min="1" step="20" max="10000"
+                                                       value="10" type="number">
+                                                <button id="plus" class="plus"></button>
+                                            </div>
+                                        </div>
+                                   <br>
+                                    <div id="histogram1"></div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-4 mix boxplot">
+
+                                <h2>Description</h2>
+                                    <p>
+                                        A boxplot for top 6 most occurred tree species that helps as to know more about our data (.e.g detecting outliers, show skewness in the data)
+                                    </p>
+                                <div id="boxplot"></div>
+                              </div>
+                                <div class="col-md-12 col-sm-4 mix scatter">
+
+                                    <h2>Description</h2>
+                                    <p>
+                                        this scatter plot shows the relationship between the tree height and CO2 Absorption as we know the more the tree is high the more it absorb CO2, you can hover over the dots to highlight a group of trees that belong to a certain kind, or you can hover over legend boxes to highlight
+                                    </p>
+                                    <div id="scatter"></div>
+                                </div>
+
+
+                                <div class="col-md-12 col-sm-4 mix multi_scatter">
+
+                                    <h2>Description</h2>
+                                    <p>In this plot we display each tree kind separately, and we draw the regression line between the tree height an CO2 absorption</p>
+                                    <div id="multi_scatterplot"></div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-4 mix bubble">
+
+                                    <h2>Description</h2>
+                                    <p>
+                                        through this plot we display another variable, the canopy size that corresponds to the bubble size
+                                    </p>
+                                    <div id="bubble"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- scripts -->
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/scripts.js"></script>
+
+<script src="js/assignment_2/histogram.js"></script>
+<script src="js/assignment_2/box_plot.js"></script>
+<script src="js/assignment_2/scatter_plot.js"></script>
+<script src="js/assignment_2/bubble_chart.js"></script>
+<script src="js/assignment_2/multi_scatterplot.js"></script>
+
+
+</body>
+</html>
