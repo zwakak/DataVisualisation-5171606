@@ -100,8 +100,6 @@ function drawDotDensityMap1(){
                 })
                 .attr("r", 2)
                 .style("fill", "green")
-                .style("opacity", "0.7")
-
         })
     }
 }
