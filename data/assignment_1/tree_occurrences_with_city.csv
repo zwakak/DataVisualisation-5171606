@@ -1,0 +1,147 @@
+state,city,Fraxinus pennsylvanica,Acer platanoides,Acer freemanii,Acer saccharinum,Tilia cordata,Other
+Wisconsin,Brown Deer,122,90,84.0,59.0,49.0,176.0
+Wisconsin,Cedarburg,1,0,,,,
+Wisconsin,Cudahy,63,41,36.0,33.0,32.0,218.0
+Wisconsin,Fox Point,25,19,19.0,11.0,11.0,75.0
+Wisconsin,Franklin,57,27,24.0,23.0,23.0,174.0
+Wisconsin,Glendale,442,186,175.0,116.0,111.0,706.0
+Wisconsin,Greendale,31,27,17.0,16.0,14.0,165.0
+Wisconsin,Greenfield,61,26,26.0,25.0,25.0,209.0
+Wisconsin,Hales Corners,43,43,35.0,29.0,24.0,262.0
+Wisconsin,Milwaukee,1411,1356,912.0,840.0,700.0,5939.0
+Wisconsin,Muskego,1,1,0.0,,,
+Wisconsin,New Berlin,639,613,478.0,300.0,285.0,3955.0
+Wisconsin,Oak Creek,37,25,13.0,9.0,9.0,92.0
+Wisconsin,Shorewood,16,14,11.0,9.0,8.0,36.0
+Wisconsin,South Milwaukee,54,45,31.0,28.0,28.0,245.0
+Wisconsin,Watertown,976,401,397.0,385.0,354.0,3632.0
+Wisconsin,Wauwatosa,265,186,171.0,157.0,151.0,938.0
+Wisconsin,West Allis,348,238,144.0,87.0,70.0,541.0
+Wisconsin,West Bend,1,0,,,,
+Wisconsin,West Milwaukee,22,19,16.0,13.0,9.0,31.0
+Wisconsin,Whitefish Bay,10,10,8.0,7.0,5.0,27.0
+Wisconsin,Wind Lake,1,0,,,,
+California,Anaheim,5266,4379,3771.0,2567.0,2317.0,36121.0
+California,Irvine,4578,3948,3830.0,3810.0,3339.0,38264.0
+California,Rancho Cucamonga,12889,5698,5549.0,5016.0,4941.0,46199.0
+Texas,Arlington,1570,1195,1139.0,1081.0,691.0,8997.0
+New York,Rochester,6307,3329,2970.0,2499.0,2178.0,28401.0
+Florida,Miami,46,41,36.0,34.0,33.0,541.0
+Texas,Austin,916,831,790.0,609.0,590.0,2239.0
+California,Stockton,11392,7552,7354.0,7179.0,5296.0,58934.0
+Washington,Seattle,8244,7543,6304.0,5206.0,4948.0,132658.0
+California,Los Angeles,37971,34729,30988.0,30061.0,28681.0,411180.0
+Colorado,Aurora,10428,6107,5465.0,4745.0,3433.0,25441.0
+New York,New York,87014,64264,58931.0,53185.0,40112.0,348663.0
+California,Oakland,3788,3312,2930.0,2683.0,2161.0,20694.0
+California,San Francisco,11925,8681,8509.0,8236.0,7793.0,129924.0
+Massachusetts,Boston,267,151,115.0,87.0,74.0,639.0
+California,Ontario,4630,4392,3900.0,3328.0,3307.0,38984.0
+Michigan,Grand Rapids,20433,5805,4523.0,3954.0,3033.0,31954.0
+Maryland,Baltimore,12910,6766,6056.0,5932.0,5817.0,83143.0
+New Mexico,Albuquerque,216,186,159.0,149.0,148.0,1616.0
+North Carolina,Greensboro,713,523,437.0,405.0,295.0,4206.0
+Oklahoma,Oklahoma City,711,689,584.0,567.0,455.0,5865.0
+California,Huntington Beach,4681,4037,3896.0,2574.0,1665.0,28376.0
+California,Fresno,749,713,588.0,444.0,397.0,3282.0
+Florida,Orlando,17126,14988,10620.0,2855.0,2609.0,17986.0
+Tennessee,Nashville,281,166,154.0,131.0,120.0,1187.0
+Missouri,St. Louis,8575,7761,7210.0,6503.0,4557.0,48846.0
+Florida,Lutz,1,0,,,,
+Florida,Seffner,4,4,3.0,1.0,0.0,
+Florida,Tampa,5379,3248,2851.0,1381.0,1236.0,9563.0
+Florida,Temple Terrace,3,3,1.0,1.0,0.0,
+Nevada,Las Vegas,5888,4480,1844.0,1483.0,1478.0,16691.0
+Arizona,Phoenix,19,16,14.0,12.0,11.0,142.0
+Minnesota,Minneapolis,28206,20191,16232.0,15362.0,12745.0,96140.0
+Indiana,Indianapolis,7042,5940,5803.0,5717.0,3977.0,68748.0
+Louisiana,New Orleans,30244,21775,5409.0,4186.0,3471.0,38987.0
+Wisconsin,Madison,20918,17377,4969.0,3894.0,3390.0,33210.0
+Ohio,Columbus,9402,9245,8657.0,7512.0,7090.0,93506.0
+Tennessee,Knoxville,683,602,594.0,517.0,323.0,5653.0
+California,Garden Grove,2358,1643,1438.0,1049.0,897.0,9997.0
+Hawaii,Ahuimanu,7,5,1.0,1.0,0.0,
+Hawaii,Aiea,1,0,,,,
+Hawaii,Heeia,1,0,,,,
+Hawaii,Honolulu,718,635,576.0,421.0,332.0,4461.0
+Hawaii,Kailua,983,981,373.0,345.0,251.0,2474.0
+Hawaii,Kaneohe,297,154,145.0,129.0,104.0,1229.0
+Hawaii,Waipahu,27,13,2.0,1.0,0.0,
+Texas,Plano,3641,3279,2598.0,1906.0,1598.0,9740.0
+Virginia,Richmond,227,171,161.0,148.0,133.0,975.0
+New Jersey,Jersey City,111,101,92.0,78.0,63.0,329.0
+Michigan,Detroit,1735,1276,1183.0,981.0,980.0,14220.0
+Oregon,Portland,25635,19209,15475.0,11700.0,10635.0,134097.0
+Rhode Island,Providence,3054,2792,2050.0,1867.0,1714.0,12605.0
+California,San Jose,26291,24316,21636.0,14644.0,9631.0,168288.0
+Georgia,Atlanta,3678,2581,1742.0,1612.0,1263.0,24859.0
+Georgia,AvondaleEstates,27,24,23.0,15.0,14.0,183.0
+Georgia,Brookhaven,19,11,8.0,8.0,5.0,55.0
+Georgia,CandlerMcAfee,8,6,4.0,2.0,1.0,7.0
+Georgia,Chamblee,28,16,14.0,12.0,10.0,34.0
+Georgia,Clarkston,101,79,36.0,11.0,4.0,0.0
+Georgia,CollegePark,12,10,8.0,7.0,7.0,59.0
+Georgia,Decatur,221,100,76.0,67.0,56.0,1338.0
+Georgia,Doraville,56,15,11.0,9.0,8.0,26.0
+Georgia,Dunwoody,111,79,54.0,42.0,39.0,610.0
+Georgia,EastPoint,84,48,41.0,35.0,33.0,343.0
+Georgia,Hapeville,51,31,30.0,19.0,17.0,100.0
+Georgia,Lithonia,3,1,1.0,0.0,,
+Georgia,Marietta,17,14,13.0,10.0,7.0,21.0
+Georgia,SandySprings,26,14,12.0,12.0,11.0,140.0
+Georgia,Scottdale,21,11,6.0,4.0,3.0,0.0
+Georgia,Tucker,29,18,8.0,0.0,,
+Georgia,Unincorporated,61,52,47.0,42.0,38.0,255.0
+Colorado,Colorado Springs,1924,1844,952.0,888.0,841.0,8459.0
+Pennsylvania,Pittsburgh,3715,3422,3238.0,2969.0,2413.0,24397.0
+Kentucky,Louisville,1810,1678,1538.0,1404.0,1086.0,25195.0
+Florida,Cape Coral,6632,5727,3298.0,1724.0,903.0,11627.0
+Colorado,Denver,25736,24178,12961.0,12735.0,11922.0,196819.0
+Massachusetts,Worcester,9364,1346,1029.0,342.0,335.0,3061.0
+Kansas,Overland Park,13289,7654,3419.0,1983.0,1929.0,16493.0
+Texas,Houston,44320,44059,13013.0,10804.0,9561.0,90029.0
+North Carolina,Durham,3103,2777,1027.0,718.0,573.0,7816.0
+California,San Diego,22624,15129,13608.0,13269.0,12677.0,134913.0
+Texas,Dallas,1238,844,761.0,691.0,497.0,2178.0
+California,Santa Rosa,468,203,155.0,139.0,87.0,161.0
+Iowa,Adair,72,53,27.0,22.0,16.0,129.0
+Iowa,Adel,97,89,57.0,40.0,39.0,222.0
+Iowa,Baxter,146,18,13.0,11.0,10.0,69.0
+Iowa,Bayard,13,12,11.0,9.0,4.0,15.0
+Iowa,Bondurant,61,51,40.0,34.0,22.0,296.0
+Iowa,Bouton,49,27,18.0,14.0,6.0,44.0
+Iowa,Carlisle,64,54,53.0,51.0,43.0,256.0
+Iowa,Colfax,53,45,29.0,28.0,13.0,109.0
+Iowa,Coon Rapids,159,88,65.0,40.0,34.0,284.0
+Iowa,Dallas Center,148,103,94.0,83.0,50.0,341.0
+Iowa,De Soto,73,12,12.0,9.0,6.0,46.0
+Iowa,Des Moines,4,4,4.0,4.0,3.0,4.0
+Iowa,Dexter,31,29,25.0,19.0,11.0,78.0
+Iowa,Earlham,151,118,54.0,35.0,26.0,166.0
+Iowa,Elkhart,28,17,16.0,12.0,10.0,32.0
+Iowa,Granger,46,21,15.0,12.0,11.0,112.0
+Iowa,Guthrie Center,68,38,27.0,20.0,17.0,58.0
+Iowa,Hartford,4,4,2.0,2.0,2.0,13.0
+Iowa,Kellogg,31,22,16.0,8.0,8.0,32.0
+Iowa,Milo,81,48,32.0,19.0,19.0,127.0
+Iowa,Mitchellville,51,26,22.0,20.0,18.0,108.0
+Iowa,Monroe,33,28,27.0,25.0,23.0,262.0
+Iowa,Newton,426,205,198.0,160.0,151.0,1977.0
+Iowa,Oakland Acres,10,6,5.0,4.0,3.0,4.0
+Iowa,Panora,56,45,22.0,21.0,16.0,59.0
+Iowa,Pleasant Hill,200,168,91.0,90.0,80.0,775.0
+Iowa,Polk City,55,21,12.0,9.0,6.0,15.0
+Iowa,Prairie City,55,33,29.0,26.0,18.0,151.0
+Iowa,Redfield,20,17,15.0,13.0,10.0,70.0
+Iowa,Runnells,12,11,6.0,6.0,6.0,22.0
+Iowa,Stuart,94,94,58.0,50.0,18.0,134.0
+Iowa,Sully,22,21,20.0,15.0,11.0,70.0
+Iowa,Union,47,21,19.0,15.0,13.0,50.0
+Iowa,Van Meter,11,8,6.0,6.0,6.0,13.0
+Iowa,Waukee,218,200,199.0,122.0,111.0,1096.0
+Iowa,Windsor Heights,39,32,26.0,25.0,22.0,235.0
+Iowa,Woodward,105,81,66.0,49.0,26.0,181.0
+California,Sacramento,14111,4580,4285.0,4146.0,4047.0,53091.0
+District of Columbia,Washington DC,12711,9981,9014.0,8904.0,6343.0,121052.0
+New York,Buffalo,13265,9156,4725.0,2731.0,2601.0,41911.0
+South Dakota,Sioux Falls,21452,5704,4933.0,4327.0,3097.0,21791.0

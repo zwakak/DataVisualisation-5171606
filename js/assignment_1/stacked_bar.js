@@ -1,33 +1,64 @@
-function drawStackedBar(){
+const states =  fetch('./data/assignment_1/states.txt').then(x => x.text())
+    .then((data) => data.trim().split('\n').sort());
+states.then(function (data){
+    const stateSelect = document.getElementById('stateSelect');
+    data.forEach((state) => {
+
+        const option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.appendChild(option);
+
+    });
+    drawStackedBar(data[0])
+})
+
+$("#stateSelect").on('change', function(){
+
+    const selected_state = $(this).val();
+    drawStackedBar(selected_state)
+});
+
+
+function drawStackedBar(selected_state){
+    d3.select("#graph3").select("svg").remove();
+
     var margin = {top: 20, right: 20, bottom: 90, left: 150},
         width = 700 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
-    const svg2 = d3.select('#graph2')
+    const svg2 = d3.select('#graph3')
         .append('svg')
-        .attr('width', width + margin.left + margin.right)
+        .attr('width', 1200)
         .attr('height', height + margin.top + margin.bottom)
         .append('g')
         .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    d3.csv("./data/tree_to_neighborhood.csv", function(data){
-        const treesNames = Object.keys(data[0]).filter(d => d != "circoscrizione");
-        const statesNames = data.map(d => d.circoscrizione);
+    d3.csv("./data/assignment_1/tree_occurrences_with_city.csv", function(data){
+        /*data.forEach(function(d) {
+            d.tree_count = parseInt(d.tree_count);
+            d.avg_mean = parseFloat(d.avg_mean);
+        });*/
+        const filteredStateData = data.filter(d => d.state === selected_state);
+
+        const cityNames = Array.from(new Set(filteredStateData.map(d => d.city)));
+        const treeNames = Object.keys(filteredStateData[0]).filter(d => d != "state" && d!="city");
+
 
 
         const stackedData = d3.stack()
-            .keys(treesNames)(data);
+            .keys(treeNames)(filteredStateData);
 
         const x2 = d3.scaleLinear()
             .domain([0, d3.max(stackedData[stackedData.length - 1], d => d[1])]).nice()
             .range([0, width]);
 
         const y2 = d3.scaleBand()
-            .domain(statesNames)
+            .domain(cityNames)
             .range([0, height])
             .padding(0.1);
 
         const color = d3.scaleOrdinal()
-            .domain(treesNames)
+            .domain(treeNames)
             .range(d3.schemePaired);
 
 
@@ -45,7 +76,7 @@ function drawStackedBar(){
             .call(yAxis)
             .attr("class", "axis")
             .selectAll("text")
-            .attr("transform", "translate(-10,0)rotate(-45)")
+            .attr("transform", "translate(-10,0)")
             .style("text-anchor", "end")
             .style("font-family", "Fira Sans")
             .call(g => g.select('.domain').remove());
@@ -60,10 +91,10 @@ function drawStackedBar(){
         var size = 12
         var legend = svg2.append('g')
             .attr('class', 'legend')
-            .attr('transform', 'translate(' + (300) + ', -100)');
+            .attr('transform', 'translate(' + (600) + ', -100)');
 
         legend.selectAll('rect')
-            .data(treesNames)
+            .data(treeNames)
             .enter()
             .append('rect')
             .attr('x', 0)
@@ -75,7 +106,7 @@ function drawStackedBar(){
             });
 
         legend.selectAll('text')
-            .data(treesNames)
+            .data(treeNames)
             .enter()
 
             .append('text')
@@ -103,7 +134,7 @@ function drawStackedBar(){
             .attr('fill', d => color(d.key))
 
 
-        const duration = 800;
+        const duration = 500;
         const t = d3.transition()
             .duration(duration)
             .ease(d3.easeLinear);
@@ -134,10 +165,10 @@ function drawStackedBar(){
                     tooltip
                         .style("visibility", "hidden")
                     d3.select(this).attr("fill", function(d){
-                        return color(treesNames[i]);
+                        return color(treeNames[i]);
                     });
                 })
-                .attr('y', d => y2(d.data.circoscrizione))
+                .attr('y', d => y2(d.data.city))
                 .attr('x', d => x2(d[0]))
                 .attr('height', y2.bandwidth())
                 .transition(t)
@@ -148,5 +179,3 @@ function drawStackedBar(){
         });
     })
 }
-
-drawStackedBar()

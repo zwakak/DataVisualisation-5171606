@@ -22,5 +22,7 @@
     <orderEntry type="library" name="topojson" level="application" />
     <orderEntry type="library" name="d3" level="application" />
     <orderEntry type="library" name="dat.gui" level="application" />
+    <orderEntry type="library" name="d3.v7" level="application" />
+    <orderEntry type="library" name="d3-color.v1" level="application" />
   </component>
 </module>

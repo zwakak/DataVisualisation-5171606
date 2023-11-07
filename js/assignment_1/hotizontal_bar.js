@@ -1,7 +1,7 @@
-const cities =  fetch('./data/assignment_1/cities.txt').then(x => x.text())
+const cities2 =  fetch('./data/assignment_1/cities.txt').then(x => x.text())
     .then((data) => data.trim().split('\n').sort());
-cities.then(function (data){
-    const citySelect = document.getElementById('citySelect');
+cities2.then(function (data){
+    const citySelect = document.getElementById('citySelect2');
     data.forEach((city) => {
 
         const option = document.createElement('option');
@@ -10,28 +10,29 @@ cities.then(function (data){
         citySelect.appendChild(option);
 
     });
-    drawVerticalBar(data[0])
+    drawHorizontalBar(data[0])
 })
 
-$("#citySelect").on('change', function(){
+$("#citySelect2").on('change', function(){
 
     const selected_city = $(this).val();
-    drawVerticalBar(selected_city)
+    drawHorizontalBar(selected_city)
 });
-function drawVerticalBar(selected_city="Adair"){
-    d3.select("#graph").select("svg").remove();
-
-    var margin = {top: 20, right: 20, bottom: 150, left: 150},
-        width = 700 - margin.left - margin.right,
+function drawHorizontalBar(selected_city="Adair"){
+    d3.selectAll("#graph2").select("svg").remove();
+    var margin = {top: 20, right: 20, bottom: 150, left: 200},
+        width = 800 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
-    var x = d3.scaleBand()
+
+    var x = d3.scaleLinear()
         .range([0, width])
+
+    var y = d3.scaleBand()
+        .range([ 0, height ])
         .padding(0.1);
-    var y = d3.scaleLinear()
-        .range([height, 0]);
 
 
-    var svg = d3.select("#graph")
+    var svg = d3.select("#graph2")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -52,19 +53,19 @@ function drawVerticalBar(selected_city="Adair"){
             });
         }
 
-        x.domain(data.map(function(d) {
+        y.domain(data.map(function(d) {
 
             return d.scientific_name;
 
         }));
-        y.domain([0, d3.max(data, function(d) { return d.tree_count; })]);
+        x.domain([0, d3.max(data, function(d) { return d.tree_count; })]);
 
         let color = d3.scaleSequential()
             .domain([0, d3.max(data, d => d.tree_count)])
             .interpolator(d3.interpolateBuPu);
 
 
-        const tooltip = d3.select("#graph")
+        const tooltip = d3.select("#graph2")
             .append("div")
             .attr("class", "tooltip")
             .style("visibility", "hidden")
@@ -75,10 +76,10 @@ function drawVerticalBar(selected_city="Adair"){
         svg.selectAll("mybar")
             .data(data)
             .enter().append("rect")
-            .attr("x", function(d) { return x(d.scientific_name); })
-            .attr("width", x.bandwidth())
-            .attr("y", function(d) { return y(0); })
-            .attr("height", function(d) { return height - y(0); })
+            .attr("x", x(0) )
+            .attr("y", function(d) { return y(d.scientific_name); })
+            .attr("width", function(d) { return x(d.tree_count); })
+            .attr("height", y.bandwidth() )
             .attr("fill", function (d) {
                 return color(d.tree_count);
             })
@@ -88,11 +89,11 @@ function drawVerticalBar(selected_city="Adair"){
                     .style("left", (event.pageX + 10) + "px");
             })
             .on("mouseover", function (d){
-                const numOfOccurrences = d.tree_count;
+                const count = d.tree_count;
                 const name = d.scientific_name;
                 const heightMean = d.avg_mean;
                 tooltip
-                    .html("Tree Name: " + `<b>${name}</b>` + "<br>" + "Number of Occurness: " + `<b>${numOfOccurrences}</b>`+ "<br>" +"Height Mean: " + `<b>${heightMean}</b>`)
+                    .html("Scientific Name: " + `<b>${name}</b>` + "<br>" + "Count: " + `<b>${count}</b>`+ "<br>" +"Height Mean: " + `<b>${heightMean}</b>`)
                     .style("visibility", "visible")
                 d3.select(this).attr("fill", "#fc3565");
             })
@@ -111,39 +112,41 @@ function drawVerticalBar(selected_city="Adair"){
             .call(d3.axisBottom(x))
             .attr("class", "axis")
             .selectAll("text")
-            .attr("transform", "translate(-10,0)rotate(-45)")
+            //.attr("transform", "translate(-10,0)rotate(-45)")
             .style("text-anchor", "end")
             .style("font-family", "Fira Sans");
 
         svg.append("g")
             .attr("class", "axis")
-            .call(d3.axisLeft(y));
+            .call(d3.axisLeft(y)).selectAll("text")
+            .style('fill', "white");
 
 
         svg.append("text")
             .attr("class", "axis")
             .attr("text-anchor", "end")
-            .attr("x", width - 200)
-            .attr("y", height + 130)
-            .text("Tree Scientific Name")
-
-        svg.append("text")
-            .attr("class", "axis")
-            .attr("text-anchor", "end")
-            .attr("y", 5)
-            .attr("x", -25)
-
-            .attr("dy", "-5em")
-            .attr("transform", "rotate(-90)")
+            .attr("x", width - 150)
+            .attr("y", height + 50)
             .text("Tree Count (According to a certain city)")
 
+        svg.append("text")
+            .attr("class", "axis")
+            .attr("text-anchor", "end")
+            .attr("y", -10)
+            .attr("x", -50)
+
+            .attr("dy", "-10em")
+            .attr("transform", "rotate(-90)")
+            .text("Tree Scientific Name")
+
+
         svg.selectAll("rect")
+            .attr("width", 0)
             .transition()
             .duration(800)
-            .attr("y", function(d) { return y(d.tree_count); })
-            .attr("height", function(d) { return height - y(d.tree_count); })
+            .attr("y", function(d) { return y(d.scientific_name); })
+            .attr("width", function(d) { return width - y(d.scientific_name); })
             .delay(function(d,i){ return(i*100)})
 
     });
 }
-

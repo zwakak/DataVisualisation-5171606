@@ -17,6 +17,8 @@
 
 <div id="particles-js">
   <div class="container">
+    <a class="logo" href="index.html">YA</a>
+
     <div class="row top">
 
       <div class="twelve column">
@@ -34,11 +36,13 @@
               <ul class="bar">
 
                 <li class="filter active" data-filter=".vertical">Vertical bar</li>
+                <li class="filter active" data-filter=".horizontal">Horizontal bar</li>
 
                 <li class="filter" data-filter=".stacked">Stacked bar</li>
                 <li class="filter" data-filter=".normalised_stacked">Normalised stacked bar</li>
 
                 <li class="filter" data-filter=".waffle">Waffle bar</li>
+                <li class="filter" data-filter=".heat">Heat Map</li>
 
               </ul>
             </div>
@@ -48,11 +52,26 @@
 
                   <h2>Description</h2>
 
-                  <p>Vertical bar shows 10 most frequent trees in the state of Trento and some meta-data (Name, Number of Occurness, Mean of Canopy) when hovering over the rectangles</p>
-
+                  <p>Vertical bar shows 10 most frequent trees in a certain city (after choosing from the drop-down list) and some meta-data (Scientific Name, Count, Avg Height) when hovering over the rectangles</p>
+                  <label for="citySelect"><span>Choose a city</span></label>
+                  <select id="citySelect">
+                  </select>
 
                   <div id="graph"></div>
                 </div>
+
+                <div class="col-md-12 col-sm-4 mix horizontal">
+
+                  <h2>Description</h2>
+
+                  <p>Horizontal bar shows 10 most frequent trees in a certain city (after choosing from the drop-down list) and some meta-data (Scientific Name, Count, Avg Height) when hovering over the rectangles</p>
+                  <label for="citySelect2"><span>Choose a city</span></label>
+                  <select id="citySelect2">
+                  </select>
+
+                  <div id="graph2"></div>
+                </div>
+
 
 
                 <div class="col-md-12 col-sm-4 mix stacked">
@@ -61,7 +80,10 @@
 
                   <p>Horizontal Stacked bar shows the neighborhoods names with the ability to see the top 5 tree species + other that corresponds to each neighborhood</p>
 
-                  <div id="graph2"></div>
+                  <label for="stateSelect"><span>Choose a state</span></label>
+                  <select id="stateSelect">
+                  </select>
+                  <div id="graph3"></div>
                 </div>
 
                 <div class="col-md-12 col-sm-4 mix normalised_stacked">
@@ -69,18 +91,32 @@
                   <h2>Description</h2>
 
                   <p>Normalised Stacked bar same as the previous one but this time instead of expressing the occurrences of trees with number, we switch to percentage</p>
-
-                  <div id="graph3"></div>
+                  <label for="stateSelect2"><span>Choose a state</span></label>
+                  <select id="stateSelect2">
+                  </select>
+                  <div id="graph4"></div>
                 </div>
 
+                <div class="col-md-12 col-sm-4 mix heat">
+
+                  <h2>Description</h2>
+
+                  <p>Heat Map</p>
+                  <label for="stateSelect3"><span>Choose a state</span></label>
+                  <select id="stateSelect3">
+                  </select>
+                  <div id="graph5"></div>
+                </div>
 
                 <div class="col-md-12 col-sm-4 mix waffle">
 
                   <h2>Description</h2>
 
                   <p>Waffle Chart where each waffle is a neighborhood and colored according to the legend on the side</p>
-
-                  <div id="graph4"></div>
+                  <label for="stateSelect4"><span>Choose a state</span></label>
+                  <select id="stateSelect4">
+                  </select>
+                  <div id="graph6"></div>
                 </div>
 
               </div>
@@ -102,8 +138,10 @@
   <script src="js/scripts.js"></script>
 
   <script src="js/assignment_1/vertical_bar.js"></script>
+  <script src="js/assignment_1/hotizontal_bar.js"></script>
   <script src="js/assignment_1/stacked_bar.js"></script>
   <script src="js/assignment_1/normalised_stacked_bar.js"></script>
+  <script src="js/assignment_1/heat_map.js"></script>
   <script src="js/assignment_1/waffle_bar.js"></script>
 </body>
 </html>

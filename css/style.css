@@ -59,10 +59,19 @@ p{
   vertical-align: middle;
 }
 
+label{
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Fira Sans';
+  font-weight: bold;
+
+  padding: 0px;
+}
+
 .logo {
   font-family: 'Monoton', cursive;
   color: white;
-  font-size: 8rem;
+  font-size: 6rem;
 }
 
 .top {
@@ -175,6 +184,11 @@ ul.bar li.active {
   transition: .3s;
 }
 
+.axis{
+  fill: white;
+  font-family: "Fira Sans"
+}
+
 .axis line {
   stroke: white !important;
   opacity: 0.3;
@@ -204,7 +218,7 @@ ul.bar li.active {
 }
 
 .line {
-  stroke: #E4002B;
+  //stroke: #E4002B;
   fill: none;
   stroke-width: 3;
 }

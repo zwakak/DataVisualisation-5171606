@@ -1,29 +1,57 @@
-function drawNormalizedStackedBar() {
+const states2 =  fetch('./data/assignment_1/states.txt').then(x => x.text())
+    .then((data) => data.trim().split('\n').sort());
+states2.then(function (data){
+    const stateSelect2 = document.getElementById('stateSelect2');
+    data.forEach((state) => {
+
+        const option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect2.appendChild(option);
+
+    });
+    drawNormalizedStackedBar(data[0])
+})
+
+$("#stateSelect2").on('change', function(){
+
+    const selected_state = $(this).val();
+
+    drawNormalizedStackedBar(selected_state)
+});
+
+function drawNormalizedStackedBar(selected_state) {
+    d3.select("#graph4").select("svg").remove();
+
     var margin = {top: 20, right: 20, bottom: 90, left: 150},
         width = 700 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
-    const svg3 = d3.select('#graph3')
+    const svg3 = d3.select('#graph4')
         .append('svg')
-        .attr('width', 1000 + width + margin.left + margin.right)
+        .attr('width', 1200)
         .attr('height', height + margin.top + margin.bottom)
         .append('g')
         .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    d3.csv("./data/tree_to_neighborhood.csv", function(data){
-        const treesNames = Object.keys(data[0]).filter(d => d !== "circoscrizione");
-        const statesNames = data.map(d => d.circoscrizione);
+    d3.csv("./data/assignment_1/tree_occurrences_with_city.csv", function(data){
+        const filteredStateData = data.filter(d => d.state === selected_state);
+
+        const cityNames = Array.from(new Set(filteredStateData.map(d => d.city)));
+        const treeNames = Object.keys(filteredStateData[0]).filter(d => d != "state" && d!="city");
+
+
 
         const x3 = d3.scaleLinear()
             .domain([0, 100]).nice()
             .range([0, width]);
 
         const y3 = d3.scaleBand()
-            .domain(statesNames)
+            .domain(cityNames)
             .range([0, height])
             .padding(0.1);
 
         const color = d3.scaleOrdinal()
-            .domain(treesNames)
+            .domain(treeNames)
             .range(d3.schemePaired);
 
 
@@ -32,18 +60,18 @@ function drawNormalizedStackedBar() {
 
         data.forEach(function (d) {
             var tot = 0
-            for (i in treesNames) {
-                var name = treesNames[i];
+            for (i in treeNames) {
+                var name = treeNames[i];
                 tot += +d[name]
             }
-            for (i in treesNames) {
-                var name = treesNames[i];
+            for (i in treeNames) {
+                var name = treeNames[i];
                 d[name] = d[name] / tot * 100
             }
 
         })
         const stackedData = d3.stack()
-            .keys(treesNames)(data);
+            .keys(treeNames)(filteredStateData);
         svg3.append('g')
             .attr('transform', `translate(0,${height})`)
             .call(xAxis)
@@ -55,7 +83,7 @@ function drawNormalizedStackedBar() {
             .call(yAxis)
             .attr("class", "axis")
             .selectAll("text")
-            .attr("transform", "translate(-10,0)rotate(-45)")
+            .attr("transform", "translate(-10,0)")
             .style("text-anchor", "end")
             .style("font-family", "Fira Sans")
             //.call(g => g.select('.domain').remove());
@@ -73,7 +101,7 @@ function drawNormalizedStackedBar() {
             .attr('transform', 'translate(' + (600) + ', 30)');
 
         legend.selectAll('rect')
-            .data(treesNames)
+            .data(treeNames)
             .enter()
             .append('rect')
             .attr('x', 0)
@@ -85,7 +113,7 @@ function drawNormalizedStackedBar() {
             });
 
         legend.selectAll('text')
-            .data(treesNames)
+            .data(treeNames)
             .enter()
 
             .append('text')
@@ -140,14 +168,15 @@ function drawNormalizedStackedBar() {
                     tooltip
                         .style("visibility", "hidden")
                     d3.select(this).attr("fill", function(d){
-                        return color(treesNames[i]);
+                        return color(treeNames[i]);
                     });
                 })
                 .attr('x', function (d){
                     return x3(d[0])
                 })
 
-                .attr('y', d => y3(d.data.circoscrizione))
+                .attr('y', d => y3(d.data.city))
+                .attr('x', d => x3(d[0]))
                 .attr('height', y3.bandwidth())
                 .transition(t)
                 .delay(i * duration)
@@ -156,6 +185,3 @@ function drawNormalizedStackedBar() {
         });
     })
 }
-
-
-drawNormalizedStackedBar()
