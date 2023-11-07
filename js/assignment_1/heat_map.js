@@ -32,7 +32,10 @@ function drawHeatMap(selected_state){
 
 
 //Read the data
-    d3.csv("./data/assignment_1/tree_occurrences_with_city.csv", function(data) {
+    d3.csv("./data/assignment_1/city_tree_counts_top_5.csv", function(data) {
+        data.forEach(function(d){
+            d.tree_count = parseInt(d.tree_count);
+        });
         var svg = d3.select("#graph5")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
@@ -44,7 +47,8 @@ function drawHeatMap(selected_state){
         const filteredStateData = data.filter(d => d.state === selected_state);
 
         const cityNames = Array.from(new Set(filteredStateData.map(d => d.city)));
-        const treeNames = Object.keys(filteredStateData[0]).filter(d => d != "state" && d!="city");
+        const treeNames = Array.from(new Set(filteredStateData.map(d => d.scientific_name)));
+        //const treeNames = Object.keys(filteredStateData[0]).filter(d => d != "state" && d!="city");
 
 
 // Build X scales and axis:
@@ -58,7 +62,7 @@ function drawHeatMap(selected_state){
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
             .selectAll("text")
-            .attr("transform", "translate(0,20)rotate(-90)")
+            .attr("transform", "translate(-10,20)rotate(-45)")
 
 // Build X scales and axis:
         var y = d3.scaleBand()
@@ -69,38 +73,64 @@ function drawHeatMap(selected_state){
         svg.append("g")
             .attr("class", "axis")
 
-            .call(d3.axisLeft(y))
-           ;
+            .call(d3.axisLeft(y));
 
 
 // Build color scale
-        const myColor = d3.scaleSequential()
-            .interpolator(d3.interpolateInferno)
-            .domain([0, d3.max(filteredStateData, function(d, i) {
-                //console.log(filteredStateData[i][treeNames])
-                return Object.keys(filteredStateData[0]).filter(d => d != "state" && d!="city")
-            })])
+        const color = d3.scaleSequential()
+            .domain([0, d3.max(filteredStateData, d => d.tree_count)])
+            .interpolator(d3.interpolateBuPu);
+
+
+        console.log(d3.max(d3.map(d=>d.tree_count)))
+        const tooltip = d3.select("#graph5")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("visibility", "hidden")
 
         svg.selectAll()
             .data(filteredStateData, function(d, i) {
-                return cityNames[i]+':'+treeNames[i];})
+
+                return d.city+':'+d.scientific_name;})
             .enter()
             .append("rect")
+            .attr('id', (d, i)=> 'rect'+i)
             .attr("rx", 4)
             .attr("ry", 4)
             .attr("x", function(d, i) {
-                return x(cityNames[i]) })
-            .attr("y", function(d, i) { return y(treeNames[i]) })
+                return x(d.city)
+            })
+
+            .attr("y", function(d, i) { return y(d.scientific_name) })
             .attr("width", x.bandwidth() )
             .attr("height", y.bandwidth() )
-            .style("fill", function(d, i) {
-
-                console.log((d[treeNames[i]]))
-
-                return myColor(d[treeNames[i]])} )
+            .attr("fill", function(d, i) {
+                return color(d.tree_count)} )
             .style("stroke-width", 4)
             .style("stroke", "none")
             .style("opacity", 0.8)
+            .on("mousemove", function () {
+                tooltip
+                    .style("top", (event.pageY - 10) + "px")
+                    .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mouseover", function (d, i){
+                const numOfOccurrences = d.tree_count;
+                const name = d.scientific_name;
+                tooltip
+                    .html("Tree Name: " + `<b>${name}</b>` + "<br>" + "Number of Occurness: " + `<b>${numOfOccurrences}</b>`)
+                    .style("visibility", "visible")
+                d3.select(this).attr("fill", "#fc3565");
+            })
+            .on("mouseleave", function (){
+                tooltip
+                    .style("visibility", "hidden")
+                d3.select(this).attr("fill", function(d){
+                    return color(d.tree_count);
+                });
+            })
+
+
 
     })
 }

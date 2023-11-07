@@ -69,7 +69,9 @@ function drawStackedBar(selected_state){
             .attr('transform', `translate(0,${height})`)
             .call(xAxis)
             .attr("class", "axis")
-            .selectAll("text").style('fill', "white")
+            .selectAll("text")
+            .attr("transform", "translate(-10,10)rotate(-45)")
+            .style('fill', "white")
             .call(g => g.select('.domain').remove());
 
         svg2.append("g")
