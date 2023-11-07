@@ -39,7 +39,7 @@ function drawVerticalBar(selected_city="Adair"){
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv("./data/assignment_1/city_tree_counts_top_10.csv",function(error, data) {
+    d3.csv("./data/assignment_1/city_tree_counts.csv",function(error, data) {
         data.forEach(function(d) {
             d.tree_count = parseInt(d.tree_count);
             d.avg_mean = parseFloat(d.avg_mean);
