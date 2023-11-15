@@ -44,7 +44,7 @@ function drawHeatMap(selected_state){
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
-        const filteredStateData = data.filter(d => d.state === selected_state);
+        const filteredStateData = data.filter(d => d.state === selected_state && d.scientific_name!=="Other");
 
         const cityNames = Array.from(new Set(filteredStateData.map(d => d.city)));
         const treeNames = Array.from(new Set(filteredStateData.map(d => d.scientific_name)));
@@ -78,11 +78,15 @@ function drawHeatMap(selected_state){
 
 // Build color scale
         const color = d3.scaleSequential()
-            .domain([0, d3.max(filteredStateData, d => d.tree_count)])
+            .domain([
+                d3.min(filteredStateData, (d) => + d.tree_count),
+                d3.median(filteredStateData, (d) => + d.tree_count),
+                d3.max(filteredStateData, (d) => + d.tree_count),
+            ])
+           //.domain([0, d3.max(filteredStateData, d => d.tree_count)])
             .interpolator(d3.interpolateBuPu);
 
 
-        console.log(d3.max(d3.map(d=>d.tree_count)))
         const tooltip = d3.select("#graph5")
             .append("div")
             .attr("class", "tooltip")
@@ -129,6 +133,89 @@ function drawHeatMap(selected_state){
                     return color(d.tree_count);
                 });
             })
+
+        var minLegend = d3.min(filteredStateData, (d) =>  + d.tree_count);
+        var maxLegend = d3.max(filteredStateData, (d) =>  + d.tree_count);
+        var sumMinMaxLegend =
+            d3.max(filteredStateData, (d) =>  + d.tree_count) +
+            d3.min(filteredStateData, (d) =>  + d.tree_count);
+
+        var legendWidth = width * 0.8,
+            legendHeight = 8;
+        var legendsvg = svg
+            .append("g")
+            .attr("id", "legend")
+            .attr(
+                "transform",
+                "translate(" + (legendWidth *.6) + "," + (height + 100) + ")"
+            );
+        var linearGradient = svg
+            .append("linearGradient")
+            .attr("id", "linear-gradient");
+        //Horizontal gradient
+        linearGradient
+            .attr("x1", "0%")
+            .attr("y1", "0%")
+            .attr("x2", "100%")
+            .attr("y2", "0%");
+        //Append multiple color stops by using D3's data/enter step
+        linearGradient
+            .selectAll("stop")
+            .data([
+                { offset: "0%", color: "white" },
+                { offset: "50%", color: "#AAC3DE" },
+                { offset: "100%", color: "#4D005F" },
+            ])
+            .enter()
+            .append("stop")
+            .attr("offset", function (d) {
+                return d.offset;
+            })
+            .attr("stop-color", function (d) {
+                return d.color;
+            });
+        //Draw the Rectangle
+        legendsvg
+
+            .append("rect")
+            .attr("class", "legendRect")
+            .attr("x", -legendWidth / 2 + 0.5)
+            .attr("y", 10)
+            .attr("width", legendWidth)
+            .attr("height", legendHeight)
+            .style("fill", "url(#linear-gradient)")
+            .style("stroke", "black")
+            .style("stroke-width", "1px");
+
+        //Set scale for x-axis
+        var xScale2 = d3
+            .scaleLinear()
+            .range([0, legendWidth])
+            .domain([
+                d3.min(filteredStateData, (d) =>  + d.tree_count),
+                d3.max(filteredStateData, (d) =>  + d.tree_count),
+            ]);
+        legendsvg
+            .append("g")
+            .call(
+                d3
+                    .axisBottom(xScale2)
+                    .tickValues([
+                        minLegend,
+                        (sumMinMaxLegend / 2 + minLegend) / 2,
+                        sumMinMaxLegend / 2,
+                        (sumMinMaxLegend / 2 + maxLegend) / 2,
+                        maxLegend,
+                    ])
+                    .tickFormat((x) => x.toFixed(2))
+            )
+            .attr("class", "axis")
+            .attr("id", "legendAxis")
+            .attr(
+                "transform",
+                "translate(" + -legendWidth / 2 + "," + (10 + legendHeight) + ")"
+            );
+
 
 
 
