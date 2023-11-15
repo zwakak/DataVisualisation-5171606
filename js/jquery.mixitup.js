@@ -77,7 +77,7 @@
             },
 
             load: {
-                filter: document.title.toLowerCase().includes('categories')?'.vertical':document.title.toLowerCase().includes('distributions')?'.histogram':document.title.toLowerCase().includes('maps')?'.colorpleth_1':'.linechart',
+                filter: document.title.toLowerCase().includes('categories')?'.vertical':document.title.toLowerCase().includes('distributions')?'.sankey':document.title.toLowerCase().includes('maps')?'.colorpleth_1':'.linechart',
                 sort: false
             },
 
