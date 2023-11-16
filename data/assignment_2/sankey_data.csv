@@ -1,0 +1,681 @@
+state,city,scientific_name,count
+Wisconsin,Brown Deer,Fraxinus pennsylvanica,122
+Wisconsin,Brown Deer,Acer saccharum,90
+Wisconsin,Brown Deer,Quercus rubra,84
+Wisconsin,Brown Deer,Celtis occidentalis,59
+Wisconsin,Brown Deer,Tilia americana,49
+Wisconsin,Cedarburg,Tilia americana,1
+Wisconsin,Cudahy,Gleditsia triacanthos,63
+Wisconsin,Cudahy,Tilia americana,41
+Wisconsin,Cudahy,Acer saccharinum,36
+Wisconsin,Cudahy,Acer saccharum,33
+Wisconsin,Cudahy,Fraxinus pennsylvanica,32
+Wisconsin,Fox Point,Thuja occidentalis,25
+Wisconsin,Fox Point,Aesculus hippocastanum,19
+Wisconsin,Fox Point,Fraxinus pennsylvanica,19
+Wisconsin,Fox Point,Pinus resinosa,11
+Wisconsin,Fox Point,Quercus rubra,11
+Wisconsin,Franklin,Quercus rubra,57
+Wisconsin,Franklin,Gleditsia triacanthos,27
+Wisconsin,Franklin,Malus tschonoskii,24
+Wisconsin,Franklin,Acer saccharum,23
+Wisconsin,Franklin,Fraxinus americana,23
+Wisconsin,Glendale,Fraxinus pennsylvanica,442
+Wisconsin,Glendale,Acer saccharum,186
+Wisconsin,Glendale,Acer platanoides,175
+Wisconsin,Glendale,Quercus rubra,116
+Wisconsin,Glendale,Acer saccharinum,111
+Wisconsin,Greendale,Fraxinus pennsylvanica,31
+Wisconsin,Greendale,Celtis occidentalis,27
+Wisconsin,Greendale,Pinus resinosa,17
+Wisconsin,Greendale,Pinus sylvestris,16
+Wisconsin,Greendale,Malus tschonoskii,14
+Wisconsin,Greenfield,Acer saccharum,61
+Wisconsin,Greenfield,Fraxinus pennsylvanica,26
+Wisconsin,Greenfield,Quercus rubra,26
+Wisconsin,Greenfield,Acer platanoides,25
+Wisconsin,Greenfield,Quercus alba,25
+Wisconsin,Hales Corners,Acer saccharum,43
+Wisconsin,Hales Corners,Fraxinus pennsylvanica,43
+Wisconsin,Hales Corners,Gleditsia triacanthos,35
+Wisconsin,Hales Corners,Juglans nigra,29
+Wisconsin,Hales Corners,Acer platanoides,24
+Wisconsin,Milwaukee,Gleditsia triacanthos,1411
+Wisconsin,Milwaukee,Fraxinus pennsylvanica,1356
+Wisconsin,Milwaukee,Acer platanoides,912
+Wisconsin,Milwaukee,Acer saccharum,840
+Wisconsin,Milwaukee,Celtis occidentalis,700
+Wisconsin,Muskego,Acer ginnala,1
+Wisconsin,Muskego,Fagus grandifolia,1
+Wisconsin,New Berlin,Fraxinus pennsylvanica,639
+Wisconsin,New Berlin,Picea pungens,613
+Wisconsin,New Berlin,Acer platanoides,478
+Wisconsin,New Berlin,Fraxinus americana,300
+Wisconsin,New Berlin,Gleditsia triacanthos,285
+Wisconsin,Oak Creek,Quercus rubra,37
+Wisconsin,Oak Creek,Malus tschonoskii,25
+Wisconsin,Oak Creek,Gleditsia triacanthos,13
+Wisconsin,Oak Creek,Acer saccharum,9
+Wisconsin,Oak Creek,Quercus alba,9
+Wisconsin,Shorewood,Crataegus,16
+Wisconsin,Shorewood,Juglans nigra,14
+Wisconsin,Shorewood,Malus tschonoskii,11
+Wisconsin,Shorewood,Acer platanoides,9
+Wisconsin,Shorewood,Acer saccharum,8
+Wisconsin,South Milwaukee,Acer saccharum,54
+Wisconsin,South Milwaukee,Fraxinus americana,45
+Wisconsin,South Milwaukee,Celtis occidentalis,31
+Wisconsin,South Milwaukee,Gleditsia triacanthos,28
+Wisconsin,South Milwaukee,Quercus rubra,28
+Wisconsin,Watertown,Acer platanoides,976
+Wisconsin,Watertown,Tilia cordata,401
+Wisconsin,Watertown,Pyrus calleryana,397
+Wisconsin,Watertown,Gleditsia triacanthos,385
+Wisconsin,Watertown,Malus tschonoskii,354
+Wisconsin,Wauwatosa,Fraxinus pennsylvanica,265
+Wisconsin,Wauwatosa,Acer saccharum,186
+Wisconsin,Wauwatosa,Acer platanoides,171
+Wisconsin,Wauwatosa,Gleditsia triacanthos,157
+Wisconsin,Wauwatosa,Quercus rubra,151
+Wisconsin,West Allis,Celtis occidentalis,348
+Wisconsin,West Allis,Gleditsia triacanthos,238
+Wisconsin,West Allis,Fraxinus pennsylvanica,144
+Wisconsin,West Allis,Malus tschonoskii,87
+Wisconsin,West Allis,Acer saccharum,70
+Wisconsin,West Bend,Populus tremuloides,1
+Wisconsin,West Milwaukee,Acer saccharum,22
+Wisconsin,West Milwaukee,Crataegus,19
+Wisconsin,West Milwaukee,Gleditsia triacanthos,16
+Wisconsin,West Milwaukee,Juniperus virginiana,13
+Wisconsin,West Milwaukee,Quercus rubra,9
+Wisconsin,Whitefish Bay,Gleditsia triacanthos,10
+Wisconsin,Whitefish Bay,Robinia pseudoacacia,10
+Wisconsin,Whitefish Bay,Tilia,8
+Wisconsin,Whitefish Bay,Quercus rubra,7
+Wisconsin,Whitefish Bay,Fraxinus,5
+Wisconsin,Wind Lake,Carya ovata,1
+California,Anaheim,Magnolia grandiflora,5266
+California,Anaheim,Washingtonia robusta,4379
+California,Anaheim,Lagerstroemia indica,3771
+California,Anaheim,Cinnamomum camphora,2567
+California,Anaheim,Pinus canariensis,2317
+California,Irvine,Pinus canariensis,4578
+California,Irvine,Eucalyptus globulus,3948
+California,Irvine,Eucalyptus maculata,3830
+California,Irvine,Tristaniopsis Brongn.,3810
+California,Irvine,Pinus brutia,3339
+California,Rancho Cucamonga,Lagerstroemia indica,12889
+California,Rancho Cucamonga,Platanus acerifolia,5698
+California,Rancho Cucamonga,Eucalyptus globulus,5549
+California,Rancho Cucamonga,Magnolia grandiflora,5016
+California,Rancho Cucamonga,Pyrus calleryana,4941
+Texas,Arlington,Ulmus crassifolia,1570
+Texas,Arlington,Lagerstroemia indica,1195
+Texas,Arlington,Quercus shumardii,1139
+Texas,Arlington,Quercus virginiana,1081
+Texas,Arlington,Cercis canadensis,691
+Florida,Miami,Pinus elliottii,46
+Florida,Miami,Sabal palmetto,41
+Florida,Miami,Adonidia merrillii,36
+Florida,Miami,Eugenia,34
+Florida,Miami,Musa acuminata,33
+Texas,Austin,Carya illinoinensis,916
+Texas,Austin,Ulmus crassifolia,831
+Texas,Austin,Quercus virginiana,790
+Texas,Austin,Lagerstroemia indica,609
+Texas,Austin,Quercus fusiformis,590
+California,Stockton,Pistacia chinensis,11392
+California,Stockton,Platanus acerifolia,7552
+California,Stockton,Lagerstroemia indica,7354
+California,Stockton,Celtis sinensis,7179
+California,Stockton,Pyrus calleryana,5296
+Washington,Seattle,Prunus cerasifera,8244
+Washington,Seattle,Acer rubrum,7543
+Washington,Seattle,Acer platanoides,6304
+Washington,Seattle,Malus,5206
+Washington,Seattle,Prunus L.,4948
+California,Los Angeles,Washingtonia robusta,37971
+California,Los Angeles,Lagerstroemia indica,34729
+California,Los Angeles,Magnolia grandiflora,30988
+California,Los Angeles,Liquidambar styraciflua,30061
+California,Los Angeles,Ficus microcarpa,28681
+Colorado,Aurora,Gleditsia triacanthos,10428
+Colorado,Aurora,Tilia,6107
+Colorado,Aurora,Fraxinus pennsylvanica,5465
+Colorado,Aurora,Acer platanoides,4745
+Colorado,Aurora,Acer saccharinum,3433
+California,Oakland,Platanus acerifolia,3788
+California,Oakland,Liquidambar styraciflua,3312
+California,Oakland,Prunus L.,2930
+California,Oakland,Pyrus calleryana,2683
+California,Oakland,Fraxinus,2161
+California,San Francisco,Platanus acerifolia,11925
+California,San Francisco,Metrosideros excelsa,8681
+California,San Francisco,Tristaniopsis laurina,8509
+California,San Francisco,Lophostemon confertus,8236
+California,San Francisco,Magnolia grandiflora,7793
+Massachusetts,Boston,Pinus strobus,267
+Massachusetts,Boston,Acer rubrum,151
+Massachusetts,Boston,Quercus rubra,115
+Massachusetts,Boston,Prunus serotina,87
+Massachusetts,Boston,Tree,74
+California,Ontario,Lagerstroemia indica,4630
+California,Ontario,Liquidambar styraciflua,4392
+California,Ontario,Cinnamomum camphora,3900
+California,Ontario,Platanus acerifolia,3328
+California,Ontario,Pinus canariensis,3307
+Michigan,Grand Rapids,Acer platanoides,20433
+Michigan,Grand Rapids,Gleditsia triacanthos,5805
+Michigan,Grand Rapids,Acer rubrum,4523
+Michigan,Grand Rapids,Acer saccharum,3954
+Michigan,Grand Rapids,Tilia cordata,3033
+Maryland,Baltimore,Acer rubrum,12910
+Maryland,Baltimore,Zelkova serrata,6766
+Maryland,Baltimore,Platanus acerifolia,6056
+Maryland,Baltimore,Tilia cordata,5932
+Maryland,Baltimore,Prunus,5817
+New Mexico,Albuquerque,Ulmus pumila,216
+New Mexico,Albuquerque,Platanus acerifolia,186
+New Mexico,Albuquerque,Gleditsia triacanthos,159
+New Mexico,Albuquerque,Pinus nigra,149
+New Mexico,Albuquerque,Fraxinus,148
+North Carolina,Greensboro,Lagerstroemia,713
+North Carolina,Greensboro,Quercus phellos,523
+North Carolina,Greensboro,Carya illinoinensis,437
+North Carolina,Greensboro,Ulmus,405
+North Carolina,Greensboro,Celtis occidentalis,295
+Oklahoma,Oklahoma City,Juniperus virginiana,711
+Oklahoma,Oklahoma City,Lagerstroemia indica,689
+Oklahoma,Oklahoma City,Quercus stellata,584
+Oklahoma,Oklahoma City,Pistacia chinensis,567
+Oklahoma,Oklahoma City,Ulmus parvifolia,455
+California,Huntington Beach,Syagrus romanzoffianum,4681
+California,Huntington Beach,Washingtonia robusta,4037
+California,Huntington Beach,Lagerstroemia indica,3896
+California,Huntington Beach,Eucalyptus camaldulensis,2574
+California,Huntington Beach,Archontophoenix cunninghamiana,1665
+California,Fresno,Cedrus deodara,749
+California,Fresno,Pistacia chinensis,713
+California,Fresno,Quercus lobata,588
+California,Fresno,Ulmus parvifolia,444
+California,Fresno,Quercus coccinea,397
+Florida,Orlando,Quercus virginiana,17126
+Florida,Orlando,Lagerstroemia indica,14988
+Florida,Orlando,Quercus laurifolia,10620
+Florida,Orlando,Sabal palmetto,2855
+Florida,Orlando,Ulmus parvifolia,2609
+Tennessee,Nashville,Platanus acerifolia,281
+Tennessee,Nashville,Zelkova serrata,166
+Tennessee,Nashville,Quercus phellos,154
+Tennessee,Nashville,Liquidambar styraciflua,131
+Tennessee,Nashville,Ulmus parvifolia,120
+Missouri,St. Louis,Acer rubrum,8575
+Missouri,St. Louis,Fraxinus pennsylvanica,7761
+Missouri,St. Louis,Pyrus calleryana,7210
+Missouri,St. Louis,Quercus palustris,6503
+Missouri,St. Louis,Fraxinus americana,4557
+Florida,Lutz,Quercus virginiana,1
+Florida,Seffner,Quercus laurifolia,4
+Florida,Seffner,Quercus nigra,4
+Florida,Seffner,Quercus virginiana,3
+Florida,Seffner,Ulmus parvifolia,1
+Florida,Tampa,Quercus virginiana,5379
+Florida,Tampa,Quercus geminata,3248
+Florida,Tampa,Lagerstroemia indica,2851
+Florida,Tampa,Sabal palmetto,1381
+Florida,Tampa,Pinus elliottii,1236
+Florida,Temple Terrace,Quercus geminata,3
+Florida,Temple Terrace,Quercus laevis,3
+Florida,Temple Terrace,Platanus occidentalis,1
+Florida,Temple Terrace,Quercus incana,1
+Nevada,Las Vegas,Pinus brutia,5888
+Nevada,Las Vegas,Fraxinus velutina,4480
+Nevada,Las Vegas,Washingtonia robusta,1844
+Nevada,Las Vegas,Acacia stenophylla,1483
+Nevada,Las Vegas,Vitex agnus-castus,1478
+Arizona,Phoenix,Fraxinus velutina,19
+Arizona,Phoenix,Syagrus romanzoffiana,16
+Arizona,Phoenix,Cercidium floridum,14
+Arizona,Phoenix,Fraxinus,12
+Arizona,Phoenix,Citrus paradisi,11
+Minnesota,Minneapolis,Fraxinus pennsylvanica,28206
+Minnesota,Minneapolis,Acer platanoides,20191
+Minnesota,Minneapolis,Ulmus americana,16232
+Minnesota,Minneapolis,Acer saccharum,15362
+Minnesota,Minneapolis,Tilia americana,12745
+Indiana,Indianapolis,Acer saccharum,7042
+Indiana,Indianapolis,Celtis occidentalis,5940
+Indiana,Indianapolis,Malus,5803
+Indiana,Indianapolis,Fraxinus americana,5717
+Indiana,Indianapolis,Ulmus pumila,3977
+Louisiana,New Orleans,Lagerstroemia indica,30244
+Louisiana,New Orleans,Quercus virginiana,21775
+Louisiana,New Orleans,Taxodium distichum,5409
+Louisiana,New Orleans,Ilex attenuata,4186
+Louisiana,New Orleans,Magnolia grandiflora,3471
+Wisconsin,Madison,Acer platanoides,20918
+Wisconsin,Madison,Fraxinus pennsylvanica,17377
+Wisconsin,Madison,Tilia,4969
+Wisconsin,Madison,Tilia cordata,3894
+Wisconsin,Madison,Gleditsia triacanthos,3390
+Ohio,Columbus,Fraxinus pennsylvanica,9402
+Ohio,Columbus,Pyrus calleryana,9245
+Ohio,Columbus,Acer rubrum,8657
+Ohio,Columbus,Acer saccharum,7512
+Ohio,Columbus,Gleditsia triacanthos,7090
+Tennessee,Knoxville,Acer rubrum,683
+Tennessee,Knoxville,Cornus florida,602
+Tennessee,Knoxville,Acer saccharum,594
+Tennessee,Knoxville,Lagerstroemia indica,517
+Tennessee,Knoxville,Cercis canadensis,323
+California,Garden Grove,Lagerstroemia indica,2358
+California,Garden Grove,Lophostemon confertus,1643
+California,Garden Grove,Cupaniopsis anacardioides,1438
+California,Garden Grove,Pinus canariensis,1049
+California,Garden Grove,Syagrus romanzoffianum,897
+Hawaii,Ahuimanu,Lagerstroemia indica,7
+Hawaii,Ahuimanu,Delonix regia,5
+Hawaii,Ahuimanu,Harpullia pendula,1
+Hawaii,Ahuimanu,Plumeria,1
+Hawaii,Aiea,Albizia saman,1
+Hawaii,Heeia,Lagerstroemia indica,1
+Hawaii,Honolulu,Albizia saman,718
+Hawaii,Honolulu,Cocos nucifera,635
+Hawaii,Honolulu,Cassia nealiae,576
+Hawaii,Honolulu,Tabebuia heterophylla,421
+Hawaii,Honolulu,Acacia confusa,332
+Hawaii,Kailua,Adonidia merrillii,983
+Hawaii,Kailua,Cocos nucifera,981
+Hawaii,Kailua,Tabebuia heterophylla,373
+Hawaii,Kailua,Casuarina equisetifolia,345
+Hawaii,Kailua,Conocarpus erectus,251
+Hawaii,Kaneohe,Adonidia merrillii,297
+Hawaii,Kaneohe,Cassia nealiae,154
+Hawaii,Kaneohe,Tabebuia heterophylla,145
+Hawaii,Kaneohe,Lagerstroemia indica,129
+Hawaii,Kaneohe,Cocos nucifera,104
+Hawaii,Waipahu,Cassia nealiae,27
+Hawaii,Waipahu,Lagerstroemia speciosa,13
+Hawaii,Waipahu,Cassia fistula,2
+Hawaii,Waipahu,Harpullia pendula,1
+Texas,Plano,Ulmus crassifolia,3641
+Texas,Plano,Celtis occidentalis,3279
+Texas,Plano,Quercus rubra,2598
+Texas,Plano,Quercus virginiana,1906
+Texas,Plano,Taxodium distichum,1598
+Virginia,Richmond,Acer saccharum,227
+Virginia,Richmond,Quercus phellos,171
+Virginia,Richmond,Lagerstroemia indica,161
+Virginia,Richmond,Acer rubrum,148
+Virginia,Richmond,Quercus palustris,133
+New Jersey,Jersey City,Thuja occidentalis,111
+New Jersey,Jersey City,Quercus rubra,101
+New Jersey,Jersey City,Quercus bicolor,92
+New Jersey,Jersey City,Tilia cordata,78
+New Jersey,Jersey City,Acer rubrum,63
+Michigan,Detroit,Salix,1735
+Michigan,Detroit,Populus,1276
+Michigan,Detroit,Acer rubrum,1183
+Michigan,Detroit,Ulmus,981
+Michigan,Detroit,Platanus acerifolia,980
+Oregon,Portland,Prunus,25635
+Oregon,Portland,Acer platanoides,19209
+Oregon,Portland,Acer rubrum,15475
+Oregon,Portland,Pyrus,11700
+Oregon,Portland,Acer,10635
+Rhode Island,Providence,Acer platanoides,3054
+Rhode Island,Providence,Pyrus calleryana,2792
+Rhode Island,Providence,Gleditsia triacanthos,2050
+Rhode Island,Providence,Platanus acerifolia,1867
+Rhode Island,Providence,Fraxinus pennsylvanica,1714
+California,San Jose,Platanus acerifolia,26291
+California,San Jose,Pistacia chinensis,24316
+California,San Jose,Lagerstroemia indica,21636
+California,San Jose,Liquidambar styraciflua,14644
+California,San Jose,Pyrus calleryana,9631
+Georgia,Atlanta,Cercis canadensis,3678
+Georgia,Atlanta,Lagerstroemia,2581
+Georgia,Atlanta,Acer buergerianum,1742
+Georgia,Atlanta,Lagerstroemia indica,1612
+Georgia,Atlanta,Acer rubrum,1263
+Georgia,AvondaleEstates,Parrotia persica,27
+Georgia,AvondaleEstates,Cercis canadensis,24
+Georgia,AvondaleEstates,Nyssa sylvatica,23
+Georgia,AvondaleEstates,Acer buergerianum,15
+Georgia,AvondaleEstates,Amelanchier arborea,14
+Georgia,Brookhaven,Prunus incam,19
+Georgia,Brookhaven,Quercus alba,11
+Georgia,Brookhaven,Cercis canadensis,8
+Georgia,Brookhaven,Quercus nuttallii,8
+Georgia,Brookhaven,Acer rubrum,5
+Georgia,CandlerMcAfee,Quercus rubra,8
+Georgia,CandlerMcAfee,Quercus nuttallii,6
+Georgia,CandlerMcAfee,Tilia americana,4
+Georgia,CandlerMcAfee,Cercis canadensis,2
+Georgia,CandlerMcAfee,Amelanchier grandiflora,1
+Georgia,Chamblee,Cercis canadensis,28
+Georgia,Chamblee,Acer buergerianum,16
+Georgia,Chamblee,Quercus lyrata,14
+Georgia,Chamblee,Lagerstroemia,12
+Georgia,Chamblee,Acer rubrum,10
+Georgia,Clarkston,Cercis canadensis,101
+Georgia,Clarkston,Cornus florida,79
+Georgia,Clarkston,Prunus L.,36
+Georgia,Clarkston,Lagerstroemia indica,11
+Georgia,Clarkston,Acer rubrum,4
+Georgia,CollegePark,Quercus nuttallii,12
+Georgia,CollegePark,Acer saccharum,10
+Georgia,CollegePark,Magnolia,8
+Georgia,CollegePark,Acer rubrum,7
+Georgia,CollegePark,Chionanthus retusus,7
+Georgia,Decatur,Cercis canadensis,221
+Georgia,Decatur,Quercus alba,100
+Georgia,Decatur,Nyssa sylvatica,76
+Georgia,Decatur,Cornus florida,67
+Georgia,Decatur,Magnolia,56
+Georgia,Doraville,Nyssa sylvatica,56
+Georgia,Doraville,Cercis canadensis,15
+Georgia,Doraville,Quercus alba,11
+Georgia,Doraville,Magnolia,9
+Georgia,Doraville,Quercus falcata,8
+Georgia,Dunwoody,Cercis canadensis,111
+Georgia,Dunwoody,Juniperus virginiana,79
+Georgia,Dunwoody,Cornus florida,54
+Georgia,Dunwoody,Ilex opaca,42
+Georgia,Dunwoody,Nyssa sylvatica,39
+Georgia,EastPoint,Lagerstroemia,84
+Georgia,EastPoint,Acer rubrum,48
+Georgia,EastPoint,Parrotia persica,41
+Georgia,EastPoint,Cercis canadensis,35
+Georgia,EastPoint,Quercus nuttallii,33
+Georgia,Hapeville,Acer buergerianum,51
+Georgia,Hapeville,Ulmus americana,31
+Georgia,Hapeville,Lagerstroemia indica,30
+Georgia,Hapeville,Quercus nuttallii,19
+Georgia,Hapeville,Taxodium distichum,17
+Georgia,Lithonia,Quercus alba,3
+Georgia,Lithonia,Acer rubrum,1
+Georgia,Lithonia,Cercis canadensis,1
+Georgia,Marietta,Juniperus virginiana,17
+Georgia,Marietta,Acer freemanii,14
+Georgia,Marietta,Magnolia virginiana,13
+Georgia,Marietta,Nyssa sylvatica,10
+Georgia,Marietta,Quercus virginiana,7
+Georgia,SandySprings,Quercus falcata,26
+Georgia,SandySprings,Cornus florida,14
+Georgia,SandySprings,Pinus taeda,12
+Georgia,SandySprings,Rhus copallina,12
+Georgia,SandySprings,Cercis canadensis,11
+Georgia,Scottdale,Quercus nuttallii,21
+Georgia,Scottdale,Acer rubrum,11
+Georgia,Scottdale,Taxodium distichum,6
+Georgia,Scottdale,Quercus alba,4
+Georgia,Scottdale,Crataegus viridis,3
+Georgia,Tucker,Quercus nuttallii,29
+Georgia,Tucker,Ulmus americana,18
+Georgia,Tucker,Quercus shumardii,8
+Georgia,Unincorporated,Quercus nuttallii,61
+Georgia,Unincorporated,Cercis canadensis,52
+Georgia,Unincorporated,Nyssa sylvatica,47
+Georgia,Unincorporated,Lagerstroemia indica,42
+Georgia,Unincorporated,Quercus lyrata,38
+Colorado,Colorado Springs,Pinus ponderosa,1924
+Colorado,Colorado Springs,Fraxinus pennsylvanica,1844
+Colorado,Colorado Springs,Acer saccharinum,952
+Colorado,Colorado Springs,Picea pungens,888
+Colorado,Colorado Springs,Ulmus pumila,841
+Pennsylvania,Pittsburgh,Acer platanoides,3715
+Pennsylvania,Pittsburgh,Acer rubrum,3422
+Pennsylvania,Pittsburgh,Platanus acerifolia,3238
+Pennsylvania,Pittsburgh,Pyrus calleryana,2969
+Pennsylvania,Pittsburgh,Tilia cordata,2413
+Kentucky,Louisville,Acer saccharum,1810
+Kentucky,Louisville,Quercus palustris,1678
+Kentucky,Louisville,Acer rubrum,1538
+Kentucky,Louisville,Fraxinus pennsylvanica,1404
+Kentucky,Louisville,Celtis occidentalis,1086
+Florida,Cape Coral,Sabal palmetto,6632
+Florida,Cape Coral,Quercus virginiana,5727
+Florida,Cape Coral,Pinus elliottii,3298
+Florida,Cape Coral,Taxodium distichum,1724
+Florida,Cape Coral,Quercus laurifolia,903
+Colorado,Denver,Fraxinus pennsylvanica,25736
+Colorado,Denver,Gleditsia triacanthos,24178
+Colorado,Denver,Tilia cordata,12961
+Colorado,Denver,Acer saccharinum,12735
+Colorado,Denver,Fraxinus americana,11922
+Massachusetts,Worcester,Acer platanoides,9364
+Massachusetts,Worcester,Acer saccharum,1346
+Massachusetts,Worcester,Acer rubrum,1029
+Massachusetts,Worcester,Acer saccharinum,342
+Massachusetts,Worcester,Tilia cordata,335
+Kansas,Overland Park,Acer rubrum,13289
+Kansas,Overland Park,Fraxinus americana,7654
+Kansas,Overland Park,Quercus palustris,3419
+Kansas,Overland Park,Liquidambar styraciflua,1983
+Kansas,Overland Park,Fraxinus pennsylvanica,1929
+Texas,Houston,Lagerstroemia indica,44320
+Texas,Houston,Quercus virginiana,44059
+Texas,Houston,Celtis occidentalis,13013
+Texas,Houston,Quercus nigra,10804
+Texas,Houston,Triadica sebifera,9561
+North Carolina,Durham,Lagerstroemia,3103
+North Carolina,Durham,Quercus phellos,2777
+North Carolina,Durham,Acer buergerianum,1027
+North Carolina,Durham,Acer rubrum,718
+North Carolina,Durham,Ulmus parvifolia,573
+California,San Diego,Syagrus romanzoffianum,22624
+California,San Diego,Washingtonia robusta,15129
+California,San Diego,Cupaniopsis anacardioides,13608
+California,San Diego,Eucalyptus,13269
+California,San Diego,Pinus,12677
+Texas,Dallas,Quercus virginiana,1238
+Texas,Dallas,Ulmus crassifolia,844
+Texas,Dallas,Quercus shumardii,761
+Texas,Dallas,Taxodium distichum,691
+Texas,Dallas,Lagerstroemia indica,497
+California,Santa Rosa,Quercus,468
+California,Santa Rosa,Sequoia sempervirens,203
+California,Santa Rosa,Abies,155
+California,Santa Rosa,Acer,139
+California,Santa Rosa,Platanus acerifolia,87
+Iowa,Adair,Acer saccharinum,72
+Iowa,Adair,Fraxinus pennsylvanica,53
+Iowa,Adair,Acer platanoides,27
+Iowa,Adair,Picea pungens,22
+Iowa,Adair,Acer saccharum,16
+Iowa,Adel,Fraxinus pennsylvanica,97
+Iowa,Adel,Acer saccharinum,89
+Iowa,Adel,Malus,57
+Iowa,Adel,Acer nigrum,40
+Iowa,Adel,Pyrus,39
+Iowa,Baxter,Acer saccharum,146
+Iowa,Baxter,Acer saccharinum,18
+Iowa,Baxter,Juniperus virginiana,13
+Iowa,Baxter,Picea pungens,11
+Iowa,Baxter,Quercus rubra,10
+Iowa,Bayard,Fraxinus pennsylvanica,13
+Iowa,Bayard,Acer saccharinum,12
+Iowa,Bayard,Acer saccharum,11
+Iowa,Bayard,Acer platanoides,9
+Iowa,Bayard,Celtis occidentalis,4
+Iowa,Bondurant,Malus,61
+Iowa,Bondurant,Catalpa,51
+Iowa,Bondurant,Fraxinus pennsylvanica,40
+Iowa,Bondurant,Acer saccharinum,34
+Iowa,Bondurant,Pinus sylvestris,22
+Iowa,Bouton,Fraxinus pennsylvanica,49
+Iowa,Bouton,Acer saccharinum,27
+Iowa,Bouton,Celtis occidentalis,18
+Iowa,Bouton,Populus tremuloides,14
+Iowa,Bouton,Gleditsia triacanthos,6
+Iowa,Carlisle,Celtis occidentalis,64
+Iowa,Carlisle,Fraxinus,54
+Iowa,Carlisle,Juglans nigra,53
+Iowa,Carlisle,Quercus rubra,51
+Iowa,Carlisle,Pinus strobus,43
+Iowa,Colfax,Acer saccharinum,53
+Iowa,Colfax,Acer saccharum,45
+Iowa,Colfax,Fraxinus,29
+Iowa,Colfax,Acer,28
+Iowa,Colfax,Gleditsia triacanthos,13
+Iowa,Coon Rapids,Fraxinus pennsylvanica,159
+Iowa,Coon Rapids,Acer platanoides,88
+Iowa,Coon Rapids,Acer saccharinum,65
+Iowa,Coon Rapids,Quercus rubra,40
+Iowa,Coon Rapids,Tilia cordata,34
+Iowa,Dallas Center,Fraxinus pennsylvanica,148
+Iowa,Dallas Center,Acer saccharinum,103
+Iowa,Dallas Center,Acer saccharum,94
+Iowa,Dallas Center,Acer platanoides,83
+Iowa,Dallas Center,Pinus strobus,50
+Iowa,De Soto,Juglans nigra,73
+Iowa,De Soto,Acer negundo,12
+Iowa,De Soto,Ulmus pumila,12
+Iowa,De Soto,Fraxinus pennsylvanica,9
+Iowa,De Soto,Acer saccharinum,6
+Iowa,Des Moines,Gymnocladus dioicus,4
+Iowa,Des Moines,Quercus,4
+Iowa,Des Moines,Quercus alba,4
+Iowa,Des Moines,Ulmus americana,4
+Iowa,Des Moines,Malus,3
+Iowa,Dexter,Malus,31
+Iowa,Dexter,Fraxinus,29
+Iowa,Dexter,Acer saccharum,25
+Iowa,Dexter,Acer saccharinum,19
+Iowa,Dexter,Acer platanoides,11
+Iowa,Earlham,Malus,151
+Iowa,Earlham,Acer saccharum,118
+Iowa,Earlham,Fraxinus pennsylvanica,54
+Iowa,Earlham,Acer rubrum,35
+Iowa,Earlham,Acer saccharinum,26
+Iowa,Elkhart,Acer saccharinum,28
+Iowa,Elkhart,Fraxinus pennsylvanica,17
+Iowa,Elkhart,Quercus macrocarpa,16
+Iowa,Elkhart,Malus,12
+Iowa,Elkhart,Acer,10
+Iowa,Granger,Fraxinus pennsylvanica,46
+Iowa,Granger,Acer saccharinum,21
+Iowa,Granger,Malus,15
+Iowa,Granger,Acer platanoides,12
+Iowa,Granger,Quercus rubra,11
+Iowa,Guthrie Center,Acer saccharum,68
+Iowa,Guthrie Center,Fraxinus pennsylvanica,38
+Iowa,Guthrie Center,Acer saccharinum,27
+Iowa,Guthrie Center,Acer platanoides,20
+Iowa,Guthrie Center,Celtis occidentalis,17
+Iowa,Hartford,Acer saccharinum,4
+Iowa,Hartford,Celtis occidentalis,4
+Iowa,Hartford,Acer platanoides,2
+Iowa,Hartford,Juglans nigra,2
+Iowa,Hartford,Morus,2
+Iowa,Kellogg,Juglans nigra,31
+Iowa,Kellogg,Acer saccharinum,22
+Iowa,Kellogg,Fraxinus pennsylvanica,16
+Iowa,Kellogg,Acer saccharum,8
+Iowa,Kellogg,Picea,8
+Iowa,Milo,Fraxinus,81
+Iowa,Milo,Malus,48
+Iowa,Milo,Acer saccharinum,32
+Iowa,Milo,Acer ginnala,19
+Iowa,Milo,Acer saccharum,19
+Iowa,Mitchellville,Acer saccharinum,51
+Iowa,Mitchellville,Fraxinus pennsylvanica,26
+Iowa,Mitchellville,Celtis occidentalis,22
+Iowa,Mitchellville,Acer platanoides,20
+Iowa,Mitchellville,Acer saccharum,18
+Iowa,Monroe,Acer saccharinum,33
+Iowa,Monroe,Acer saccharum,28
+Iowa,Monroe,Cercis canadensis,27
+Iowa,Monroe,Celtis occidentalis,25
+Iowa,Monroe,Acer,23
+Iowa,Newton,Quercus macrocarpa,426
+Iowa,Newton,Fraxinus pennsylvanica,205
+Iowa,Newton,Pinus strobus,198
+Iowa,Newton,Quercus rubra,160
+Iowa,Newton,Malus,151
+Iowa,Oakland Acres,Pinus strobus,10
+Iowa,Oakland Acres,Quercus rubra,6
+Iowa,Oakland Acres,Quercus palustris,5
+Iowa,Oakland Acres,Fraxinus pennsylvanica,4
+Iowa,Oakland Acres,Acer rubrum,3
+Iowa,Panora,Acer saccharum,56
+Iowa,Panora,Fraxinus pennsylvanica,45
+Iowa,Panora,Acer saccharinum,22
+Iowa,Panora,Acer platanoides,21
+Iowa,Panora,Malus,16
+Iowa,Pleasant Hill,Malus,200
+Iowa,Pleasant Hill,Celtis occidentalis,168
+Iowa,Pleasant Hill,Quercus rubra,91
+Iowa,Pleasant Hill,Quercus macrocarpa,90
+Iowa,Pleasant Hill,Pinus strobus,80
+Iowa,Polk City,Malus,55
+Iowa,Polk City,Pyrus,21
+Iowa,Polk City,Fraxinus pennsylvanica,12
+Iowa,Polk City,Acer rubrum,9
+Iowa,Polk City,Quercus bicolor,6
+Iowa,Prairie City,Picea,55
+Iowa,Prairie City,Acer saccharinum,33
+Iowa,Prairie City,Thuja occidentalis,29
+Iowa,Prairie City,Acer saccharum,26
+Iowa,Prairie City,Fraxinus,18
+Iowa,Redfield,Malus,20
+Iowa,Redfield,Acer saccharinum,17
+Iowa,Redfield,Fraxinus pennsylvanica,15
+Iowa,Redfield,Acer,13
+Iowa,Redfield,Celtis occidentalis,10
+Iowa,Runnells,Fraxinus pennsylvanica,12
+Iowa,Runnells,Acer saccharinum,11
+Iowa,Runnells,Acer,6
+Iowa,Runnells,Acer rubrum,6
+Iowa,Runnells,Picea,6
+Iowa,Stuart,Acer saccharum,94
+Iowa,Stuart,Fraxinus pennsylvanica,94
+Iowa,Stuart,Acer saccharinum,58
+Iowa,Stuart,Acer platanoides,50
+Iowa,Stuart,Gleditsia triacanthos,18
+Iowa,Sully,Acer saccharum,22
+Iowa,Sully,Acer saccharinum,21
+Iowa,Sully,Fraxinus pennsylvanica,20
+Iowa,Sully,Picea,15
+Iowa,Sully,Gleditsia triacanthos,11
+Iowa,Union,Acer saccharum,47
+Iowa,Union,Acer nigrum,21
+Iowa,Union,Acer platanoides,19
+Iowa,Union,Acer saccharinum,15
+Iowa,Union,Fraxinus,13
+Iowa,Van Meter,Acer saccharum,11
+Iowa,Van Meter,Platanus occidentalis,8
+Iowa,Van Meter,Acer saccharinum,6
+Iowa,Van Meter,Quercus palustris,6
+Iowa,Van Meter,Ulmus pumila,6
+Iowa,Waukee,Fraxinus pennsylvanica,218
+Iowa,Waukee,Malus,200
+Iowa,Waukee,Picea,199
+Iowa,Waukee,Tilia cordata,122
+Iowa,Waukee,Pinus strobus,111
+Iowa,Windsor Heights,Fraxinus pennsylvanica,39
+Iowa,Windsor Heights,Pyrus,32
+Iowa,Windsor Heights,Populus,26
+Iowa,Windsor Heights,Malus,25
+Iowa,Windsor Heights,Gleditsia triacanthos,22
+Iowa,Woodward,Acer saccharinum,105
+Iowa,Woodward,Acer platanoides,81
+Iowa,Woodward,Acer nigrum,66
+Iowa,Woodward,Fraxinus pennsylvanica,49
+Iowa,Woodward,Malus,26
+California,Sacramento,Platanus acerifolia,14111
+California,Sacramento,Pistacia chinensis,4580
+California,Sacramento,Pyrus calleryana,4285
+California,Sacramento,Lagerstroemia indica,4146
+California,Sacramento,Ulmus parvifolia,4047
+District of Columbia,Washington DC,Acer rubrum,12711
+District of Columbia,Washington DC,Quercus phellos,9981
+District of Columbia,Washington DC,Ulmus americana,9014
+District of Columbia,Washington DC,Quercus palustris,8904
+District of Columbia,Washington DC,Zelkova serrata,6343
+South Dakota,Sioux Falls,Fraxinus pennsylvanica,21452
+South Dakota,Sioux Falls,Acer platanoides,5704
+South Dakota,Sioux Falls,Acer freemanii,4933
+South Dakota,Sioux Falls,Acer saccharinum,4327
+South Dakota,Sioux Falls,Tilia cordata,3097

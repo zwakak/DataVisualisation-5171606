@@ -24,5 +24,10 @@
     <orderEntry type="library" name="dat.gui" level="application" />
     <orderEntry type="library" name="d3.v7" level="application" />
     <orderEntry type="library" name="d3-color.v1" level="application" />
+    <orderEntry type="library" name="d3-sankey" level="application" />
+    <orderEntry type="library" name="d3-array" level="application" />
+    <orderEntry type="library" name="d3-collection" level="application" />
+    <orderEntry type="library" name="d3-path" level="application" />
+    <orderEntry type="library" name="d3-shape" level="application" />
   </component>
 </module>

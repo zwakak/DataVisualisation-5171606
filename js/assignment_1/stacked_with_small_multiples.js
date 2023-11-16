@@ -57,14 +57,11 @@ function drawStackedBarWithSmallMultiples(selected_state) {
             .style("visibility", "hidden")
 
 
-        const zip = (a, b) => a.map((k, i) => [k, b[i]]);
-
         const y = d3.scaleBand()
             .domain(cityNames)
             .range([height, 0])
             .padding(.1);
 
-        // build small multiples, 1 for each tree name
         for (let index = 0; index < treeNames.length; index++) {
             var sm_margin = 60;
             var sm_width = 400;
@@ -117,7 +114,6 @@ function drawStackedBarWithSmallMultiples(selected_state) {
                 .attr("height", y.bandwidth())
                 .attr("fill", plantColor)
                 .on("mouseover", function (d, i) {
-                    //console.log(i)
                     tooltip.html(`Count : ${d.tree_count}`)
                         .style("visibility", "visible");
                     d3.select(this).attr("fill", "red");
