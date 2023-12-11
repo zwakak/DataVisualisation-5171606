@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 3 - Distributions</title>
+  <meta name="author" content="Yazan Aakel" />
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet'>
+  <link rel="shortcut icon" type="image/x-icon" href="images/molecules.ico">
+
+</head>
+<body>
+
+<div id="particles-js">
+  <div class="container">
+    <a class="logo" href="index.html">Group - 5171606</a>
+
+    <div class="row top">
+
+      <div class="twelve column">
+
+        <section id="bar" class="bar section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="section-title">
+                  <h1>Assignment 3 - Distributions</h1>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <ul class="bar">
+
+                <li class="filter active" data-filter=".linechart">Line Chart</li>
+                <li class="filter active" data-filter=".radar">Radar Chart</li>
+                <li class="filter active" data-filter=".ridgeline">Ridge Line Chart</li>
+
+
+              </ul>
+            </div>
+            <div class="bar-inner">
+              <div class="row bar-posts">
+                <div class="col-md-12 col-sm-4 mix linechart">
+
+                  <h2>Description</h2>
+
+                  <p>In this chart I managed to display the measurements of the temperature using 2 lines to represent the minimum temperature and maximum temperature,<br>
+                    and for the average I used a scatter plot. the temperatures are being displayed over the months of the selected years (maximum 10 years)<br>
+                    and in a certain state of the US. by hovering over the dots you will be able to find more details (date and actual temperature) <br>
+                    and by hovering over the legend you'll be able to view the chart for the specific year (in case of choosing multiple years)<br>
+                    to better clarify the chart </p>
+
+
+
+                  <div class="selects-wrapper">
+
+
+
+                    <label for="stateSelect" style="margin: 10px"><span>Choose a State </span></label>
+                    <select id="stateSelect">
+                    </select>
+
+                      <span style="width: 50px; display: inline;"></span>
+                    <label for="yearSelect" style="margin: 10px"><span>Choose years (up to 10)</span></label>
+                    <select class="multiselect-dropdown" id="yearSelect" multiple
+                            multiselect-search="false"
+                            multiselect-select-all="false"
+                            multiselect-hide-x = "false"
+                            multiselect-max-items="2">
+
+
+
+
+                    </select>
+
+                  </div>
+                  <br><br>
+                  <div id="linechart"></div>
+                </div>
+                </div>
+
+
+              <div class="col-md-12 col-sm-4 mix radar">
+
+                <h2>Description</h2>
+
+                <p>In this chart, I managed to view the temperatures using three different radar chart each for minimum, maximum and average measurements over the selected years and state, hovering over the dots will display more details about the temperature value and date</p>
+
+
+
+                <div class="selects-wrapper">
+
+
+
+                  <label for="stateSelect2" style="margin: 10px"><span>Choose a State </span></label>
+                  <select id="stateSelect2">
+                  </select>
+
+                  <span style="width: 50px; display: inline;"></span>
+
+                  <label for="yearSelect2" style="margin: 10px"><span>Choose years (up to 10)</span></label>
+
+
+                  <select class="multiselect-dropdown" id="yearSelect2" name="yearSelect2" multiple
+                          multiselect-search="false"
+                          multiselect-select-all="false"
+                          multiselect-hide-x = "false"
+                          multiselect-max-items="2"
+                          aria-multiselectable="true"
+                  >
+
+
+                  </select>
+
+                </div>
+                <br><br>
+                <div class="row">
+
+                  <div class="radar-chart-container" id='radarchart1'></div>
+
+                  <div class="radar-chart-container" id='radarchart2'></div>
+
+                  <div class="radar-chart-container" id='radarchart3'></div>
+                </div>
+              </div>
+
+
+
+              <div class="col-md-12 col-sm-4 mix ridgeline">
+
+                <h2>Description</h2>
+
+                <p>In this chart we also represent the distribution of the temperature over the months of the selected years, the legend shows <br>that we have 2 categories (the mean of the minimum and maximum temperatures of each selected year)</p>
+
+
+
+                <div class="selects-wrapper">
+
+
+
+                  <label for="stateSelect3" style="margin: 10px"><span>Choose a State </span></label>
+                  <select id="stateSelect3">
+                  </select>
+
+                  <span style="width: 50px; display: inline;"></span>
+
+                  <label for="yearSelect3" style="margin: 10px"><span>Choose years (up to 10)</span></label>
+
+
+                  <select class="multiselect-dropdown" id="yearSelect3" name="yearSelect2" multiple
+                          multiselect-search="false"
+                          multiselect-select-all="false"
+                          multiselect-hide-x = "false"
+                          multiselect-max-items="2"
+                          aria-multiselectable="true"
+                  >
+
+
+                  </select>
+
+                </div>
+                <br><br>
+                <div class="row">
+
+                  <div id='ridgelinechart'></div>
+
+
+                </div>
+              </div>
+            </div>
+
+
+
+              </div>
+
+
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- scripts -->
+<!--<script src="js/particles.js"></script>-->
+
+<!--
+<script src="js/app.js"></script>
+-->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/scripts.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.js"></script>
+<script src="./js/multiselect-dropdown.js" ></script>
+<script src="./js/assignment_3/linechart.js"></script>
+
+<script src="./js/assignment_3/radarchart.js"></script>
+<script src="./js/assignment_3/ridgeline.js"></script>
+
+</body>
+</html>

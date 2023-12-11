@@ -22,6 +22,7 @@
      */
 
     $.MixItUp = function(filter) {
+
         var self = this;
 
         self._execAction('_constructor', 0);
@@ -77,7 +78,13 @@
             },
 
             load: {
-                filter: document.title.toLowerCase().includes('categories')?'.vertical':document.title.toLowerCase().includes('distributions')?'.sankey':document.title.toLowerCase().includes('maps')?'.colorpleth_1':'.linechart',
+                filter: document.title.toLowerCase().includes('assignment 1')?'.vertical':
+                    document.title.toLowerCase().includes('assignment 2')?'.sankey':
+                        document.title.toLowerCase().includes('assignment 3')?'.linechart':'',
+                    /*document.title.toLowerCase().includes('distributions')?'.linechart':
+                        document.title.toLowerCase().includes('part')?'.sankey':
+                            document.title.toLowerCase().includes('maps')?'.colorpleth_1':
+                                '.linechart',*/
                 sort: false
             },
 
@@ -120,7 +127,6 @@
             _$show: $(),
             _$hide: $()
         });
-
         self._execAction('_constructor', 1);
     };
 
