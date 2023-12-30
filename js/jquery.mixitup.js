@@ -80,7 +80,8 @@
             load: {
                 filter: document.title.toLowerCase().includes('assignment 1')?'.vertical':
                     document.title.toLowerCase().includes('assignment 2')?'.sankey':
-                        document.title.toLowerCase().includes('assignment 3')?'.linechart':'',
+                        document.title.toLowerCase().includes('assignment 3')?'.linechart':
+                            document.title.toLowerCase().includes('maps')?'.dot_density1':'',
                     /*document.title.toLowerCase().includes('distributions')?'.linechart':
                         document.title.toLowerCase().includes('part')?'.sankey':
                             document.title.toLowerCase().includes('maps')?'.colorpleth_1':

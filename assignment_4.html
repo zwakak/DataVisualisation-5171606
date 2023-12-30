@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 4 - Maps</title>
+  <meta name="author" content="Yazan Aakel"/>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto%20Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira%20Sans' rel='stylesheet'>
+  <link rel="shortcut icon" type="image/x-icon" href="images/molecules.ico">
+
+</head>
+<body>
+<div id="particles-js">
+  <div class="container">
+    <a class="logo" href="index.html">Group - 5171606</a>
+
+    <div class="row top">
+
+      <div class="twelve column">
+
+        <section id="bar" class="bar section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="section-title">
+                  <h1>Assignment 4 - Maps</h1>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <ul class="bar">
+
+
+
+                <li class="filter" data-filter=".dot_density1">Dot Density Map 1</li>
+
+                <li class="filter" data-filter=".dot_density2">Dot Density Map 2</li>
+
+                <li class="filter active" data-filter=".colorpleth">Colorpleth Map</li>
+
+
+              </ul>
+            </div>
+
+            <div class="bar-inner">
+              <div class="row bar-posts">
+
+
+
+
+                <div class="col-md-12 col-sm-4 mix dot_density1">
+
+                  <h2>Description</h2>
+                  <p>This dot density map displays the location of each tree in it's corresponding state</p>
+
+                  <div id="dotdensity1"></div>
+
+                </div>
+
+                <div class="col-md-12 col-sm-4 mix dot_density2">
+
+                  <h2>Description</h2>
+                  <p>here, we are being more specific by coloring each tree according to its kind, and we only care about top 10 most frequent trees with considering other species as Other</p>
+
+                  <div id="dotdensity2"></div>
+
+                </div>
+
+                <div class="col-md-12 col-sm-4 mix colorpleth">
+
+                  <h2>Description</h2>
+                  <p>
+                    In this map we draw each state colored according to the number of trees it has. you can hover over the state to display state's name, area, and the number of trees
+                  </p>
+
+                  <div id="colorpleth"></div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.js"></script>
+<script src="//unpkg.com/cartogram-chart@1"></script>
+<script src="//unpkg.com/d3-scale-chromatic"></script>
+
+<!--<script src="js/particles.js"></script>
+<script src="js/app.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/scripts.js"></script>
+
+<script src="js/assignment_4/colorpleth.js"></script>
+<script src="js/assignment_4/dotdensity1.js"></script>
+<script src="js/assignment_4/dotdensity2.js"></script>
+
+
+
+
+
+</html>
