@@ -1,34 +1,52 @@
-state,total_tree_count,area
-California,1764259.0,423968
-New York,772242.0,141297
-Colorado,354878.0,269601
-Texas,261405.0,695662
-Oregon,216751.0,248608
-Minnesota,188876.0,225163
-District of Columbia,168005.0,177
-Washington,164903.0,184666
-Ohio,135412.0,116096
-Florida,121894.0,170304
-Maryland,120624.0,25313
-Wisconsin,115824.0,140268
-Louisiana,104072.0,135659
-Indiana,97227.0,92789
-Michigan,90077.0,250488
-Missouri,83452.0,180560
-South Dakota,61304.0,199729
-Kansas,44767.0,211754
-Georgia,41250.0,148958
-Pennsylvania,40154.0,119283
-Kentucky,32711.0,102908
-Nevada,31864.0,286380
-Rhode Island,24082.0,2678
-North Carolina,22593.0,139390
-Massachusetts,16810.0,20203
-Iowa,15805.0,145746
-Hawaii,15139.0,16637
-Tennessee,10411.0,109153
-Oklahoma,8871.0,177846
-New Mexico,2474.0,314917
-Virginia,1815.0,110787
-New Jersey,774.0,19050
-Arizona,214.0,295234
+state,area,total_tree_count
+California,423968,1764259.0
+New York,141297,772242.0
+Colorado,269601,354878.0
+Texas,695662,261405.0
+Oregon,248608,216751.0
+Minnesota,225163,188876.0
+District of Columbia,177,168005.0
+Washington,184666,164903.0
+Ohio,116096,135412.0
+Florida,170304,121894.0
+Maryland,25313,120624.0
+Wisconsin,140268,115824.0
+Louisiana,135659,104072.0
+Indiana,92789,97227.0
+Michigan,250488,90077.0
+Missouri,180560,83452.0
+South Dakota,199729,61304.0
+Kansas,211754,44767.0
+Georgia,148958,41250.0
+Pennsylvania,119283,40154.0
+Kentucky,102908,32711.0
+Nevada,286380,31864.0
+Rhode Island,2678,24082.0
+North Carolina,139390,22593.0
+Massachusetts,20203,16810.0
+Iowa,145746,15805.0
+Hawaii,16637,15139.0
+Tennessee,109153,10411.0
+Oklahoma,177846,8871.0
+New Mexico,314917,2474.0
+Virginia,110787,1815.0
+New Jersey,19050,774.0
+Arizona,295234,214.0
+Utah,219882,0.0
+West Virginia,62259,0.0
+Vermont,24906,0.0
+South Carolina,82931,0.0
+Alabama,135767,0.0
+North Dakota,178712,0.0
+New Hampshire,23186,0.0
+Nebraska,199097,0.0
+Montana,380832,0.0
+Alaska,1717855,0.0
+Mississippi,120383,0.0
+Maine,91646,0.0
+Illinois,144774,0.0
+Idaho,216443,0.0
+Delaware,5047,0.0
+Connecticut,12534,0.0
+Arkansas,137733,0.0
+Wyoming,253335,0.0
