@@ -15,7 +15,7 @@ function drawColorpleth1(){
         .scale([100]); // scale things down so see entire US
 
 
-    d3.csv("../data/assignment_4/state_total_tree_counts.csv", function(data) {
+    d3.csv("./data/assignment_4/state_total_tree_counts.csv", function(data) {
         data.forEach(function(d) {
             d.total_tree_count = parseInt(d.total_tree_count);
         });
@@ -26,7 +26,7 @@ function drawColorpleth1(){
             .domain([200, 1000,5000, 50000, 100000, 700000])
             .range(d3.schemeGreens[7]);
 
-        d3.json("../data/assignment_4/states.json", function(topo) {
+        d3.json("./data/assignment_4/states.json", function(topo) {
             for (var i = 0; i < data.length; i++) {
 
 

@@ -13,7 +13,7 @@ function drawDotDensityMap2(){
         .scale([90]); // scale things down so see entire US
 
     d3.queue()
-        .defer(d3.json, "../data/assignment_4/states.json")
+        .defer(d3.json, "./data/assignment_4/states.json")
 
         .await(ready);
 
@@ -80,7 +80,7 @@ function drawDotDensityMap2(){
             .on("mousemove", mousemove )
             .on("mouseleave", mouseLeave )
 
-        d3.csv('../data/assignment_4/scientific_name_coordinates.csv', function (err, data){
+        d3.csv('./data/assignment_4/scientific_name_coordinates.csv', function (err, data){
             if(err)
                 throw err;
 
