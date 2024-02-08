@@ -4,11 +4,12 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="4">
+          <list size="5">
             <item index="0" class="java.lang.String" itemvalue="multiselect-select-all" />
             <item index="1" class="java.lang.String" itemvalue="multiselect-search" />
             <item index="2" class="java.lang.String" itemvalue="multiselect-max-items" />
             <item index="3" class="java.lang.String" itemvalue="multiselect-hide-x" />
+            <item index="4" class="java.lang.String" itemvalue="mbsc-input" />
           </list>
         </value>
       </option>

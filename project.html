@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Final Project</title>
+  <meta name="author" content="Yazan Aakel"/>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto%20Slab' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Fira%20Sans' rel='stylesheet'>
+  <link rel="shortcut icon" type="image/x-icon" href="images/molecules.ico">
+
+</head>
+<body>
+<div id="particles-js">
+  <div class="container">
+    <a class="logo" href="index.html">Group - 5171606</a>
+
+    <div class="row top">
+
+      <div class="twelve column">
+
+        <section id="bar" class="bar section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="section-title">
+                  <h1>Final Project - Life Expectancy</h1>
+                </div>
+              </div>
+            </div>
+
+
+              <div class="row bar-posts">
+
+                <div class="col-md-12 col-sm-4 mix">
+
+                  <!--SECTION - COLORPLETH MAP-->
+                  <h2>What are the factors that affect Life Expectancy in different countries?</h2>
+                  <p>This is our story that we want to tell the user.. discription of the data - link for the data</p>
+                  <h3>First Graph - Colorpleth map</h3>
+                  <br>
+
+                  <div class="selects-wrapper">
+                    <label for="yearSelect" style="margin: 10px"><span>Choose a Year </span></label>
+                  <select id="yearSelect">
+                  </select>
+
+                    <span style="width: 50px; display: inline;"></span>
+
+
+                    <label for="parameterSelect" style="margin: 10px"><span>Choose a Parameter </span></label>
+                  <select id="parameterSelect">
+                    <option value="life_expectancy">Life expectancy</option>
+                    <option value="adult_mortality">Adult Mortality</option>
+                    <option value="infant_deaths">infant deaths</option>
+                  </select>
+
+                  </div>
+                  <div id="colorpleth"></div>
+
+                  <!--END - COLORPLETH MAP-->
+
+
+                  <!--SECTION - HORIZONTAL PLOT-->
+                  <h2>What are the factors that affect Life Expectancy in different countries?</h2>
+                  <p>This is our story that we want to tell the user.. discription of the data - link for the data</p>
+                  <h3>Second Graph - Horizontal with small multiples</h3>
+                  <br>
+
+                  <div class="selects-wrapper">
+                    <label for="yearSelectHorizontal" style="margin: 10px"><span>Choose a Year </span></label>
+                    <select id="yearSelectHorizontal">
+                    </select>
+
+                    <span style="width: 50px; display: inline;"></span>
+
+
+                  </div>
+                  <div id="horizontal"></div>
+                  <!--END - HORIZONTAL PLOT-->
+
+
+                  <!--SECTION - SCATTER PLOT-->
+                  <h2>What are the factors that affect Life Expectancy in different countries?</h2>
+                  <p>This is our story that we want to tell the user.. discription of the data - link for the data</p>
+                  <h3>THIRD Graph - Scatter plot</h3>
+                  <br>
+                  <div class="selects-wrapper">
+                    <label for="yearSelectScatter" style="margin: 5px"><span>Choose a Year </span></label>
+                    <select id="yearSelectScatter">
+                    </select>
+
+                    <span style="width: 50px; display: inline;"></span>
+
+
+                    <label for="parameterSelectScatter" style="margin: 5px"><span>Choose a Parameter </span></label>
+                    <select id="parameterSelectScatter">
+                      <option value="alcohol">Alcohol Consumption</option>
+                      <option value="BMI">BMI</option>
+                    </select>
+                  </div>
+                  <br>
+                  <br>
+                  <label for="regionSelect" style="margin: 10px"><span>Choose Region(s)</span></label>
+                  <br>
+                  <br>
+                  <div class="selects-wrapper">
+
+
+                    <select id="regionSelect"  multiselect-max-items="15" name="multiple" style="margin: 10px"
+                            data-placeholder="Select Region" multiple>
+                      <option value="Asia" selected>Asia</option>
+                      <option value="Europe" selected>Europe</option>
+                      <option value="Africa" selected>Africa</option>
+                      <option value="North America">North America</option>
+                      <option value="South America">South America</option>
+                      <option value="Oceania">Oceania</option>
+
+                  </select>
+                  </div>
+                  <br>
+                  <br>
+                  <div id="scatter_plot"></div>
+
+                  <br>
+                  <br>
+                  <!--END - SCATTER PLOT-->
+
+
+
+
+
+                  <!--SECTION - BUBBLE PLOT-->
+                  <h2>Economic Impact vs. Life Expectancy Bubble Chart</h2>
+                  <p>This Bubble Chart illustrates the relationship between a country's economic impact, represented by Gross Domestic Product (GDP), and its life expectancy. Each bubble corresponds to a country, positioned based on its GDP (Y-axis) and life expectancy (X-axis). The size of each bubble represents GDP, with larger bubbles indicating higher life expectancy. But that is not always the case, this means that there might be other factors related to the life expectancy</p>
+                  <h3>FOURTH Graph - Bubble chart</h3>
+                  <br>
+                  <div class="selects-wrapper">
+                    <label for="yearSelectBubble" style="margin: 10px"><span>Choose a Year </span></label>
+                    <select id="yearSelectBubble">
+                    </select>
+
+                    <span style="width: 50px; display: inline;"></span>
+
+
+                    <label for="parameterSelectBubble" style="margin: 10px"><span>Choose a Parameter </span></label>
+                    <select id="parameterSelectBubble">
+                      <option value="GDP">GDP</option>
+                      <option value="schooling">Schooling</option>
+                      <option value="income_composition_of_resources">Income Composition of Resources</option>
+                    </select>
+
+                  </div>
+                  <div id="bubble"></div>
+                  <!--END - BUBBLE PLOT-->
+
+
+                  <!--SECTION - BOX PLOT-->
+                  <h2>HEADLINE</h2>
+                  <p>DESCRIPTION</p>
+                  <h3>FIFTH Graph - BOX chart</h3>
+                  <br>
+                  <div class="selects-wrapper">
+                    <label for="yearSelectBox" style="margin: 10px"><span>Choose a Year </span></label>
+                    <select id="yearSelectBox">
+                    </select>
+
+                  </div>
+                  <div id="box"></div>
+                  <!--END - BOX PLOT-->
+
+
+                  <!--SECTION - LINE PLOT-->
+                  <br>
+                  <br>
+                  <h2>Line Chart</h2>
+                  <p>Line Chart</p>
+                  <h3>SIXTH Graph - Line chart</h3>
+                  <br>
+
+                  <div id="linechart"></div>
+                  <!--END - LINE PLOT-->
+
+                </div>
+              </div>
+
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.js"></script>
+<script src="//unpkg.com/cartogram-chart@1"></script>
+<script src="//unpkg.com/d3-scale-chromatic"></script>
+
+<!--<script src="js/particles.js"></script>
+<script src="js/app.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/scripts.js"></script>
+
+
+<script src="js/project/colorpleth.js"></script>
+<script src="js/lc_select.js"></script>
+
+<script>
+  const select = document.querySelector('#regionSelect');
+  new lc_select(select, {
+    wrap_width: '100%',
+    min_for_search: 1,
+    pre_placeh_opt: true,
+  });
+
+  new lc_select('#regionSelect', {
+    wrap_width : '100%',
+    enable_search : false,
+    max_opts : 15,
+
+  });
+</script>
+<script src="js/project/horizontal_chart.js"></script>
+<script src="js/project/scatter.js"></script>
+<script src="js/project/bubble_chart.js"></script>
+<script src="js/project/box_plot.js"></script>
+<script src="js/project/line_chart.js"></script>
+
+
+
+
+
+</html>
