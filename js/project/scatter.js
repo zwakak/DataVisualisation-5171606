@@ -4,13 +4,16 @@ years2.then(function (data){
     const yearSelect = document.getElementById('yearSelectScatter');
     data.forEach((year) => {
 
-        const option = document.createElement('option');
-        option.value = year;
-        option.text = year;
+        if(year!=="2015") {
+            const option = document.createElement('option');
+            option.value = year;
+            option.text = year;
 
-        yearSelect.appendChild(option);
+            yearSelect.appendChild(option);
+        }
 
     });
+
 
 })
 
@@ -53,22 +56,7 @@ function getSelectedCountries() {
 
         if (option.selected===true) {
             selectedCountries.push(option.text)
-            /*if(selectedYears.length >10){
-                selectedYears.pop()
-                window.alert("you cannot select more than 10 years options")
-                /!*option.selected = false
-                var selectDropDown = document.getElementById('drop-down');
-                selectDropDown.children[i].classList.remove("checked")
-                option.querySelector("input").checked = false;*!/
 
-                /!*var selectDropDown = document.getElementById('drop-down');
-
-                selectDropDown.children[i].children.item(0).toggleAttribute("checked")*!/
-
-
-
-                break
-            }*/
         }
     }
     return selectedCountries;
@@ -116,7 +104,8 @@ countries.then(function (data){
 })*/
 
 
-function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", selectedRegions=[
+function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol",
+                         selectedRegions=[
     "Asia", "Europe", "Africa", "North America", "South America", "Oceania"
 ]){
     d3.selectAll("#scatter_plot").select("svg").remove();
@@ -150,7 +139,7 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
                 return selectedRegions.includes(obj.region);
             });
         }
-        var regions = Array.from(new Set(data.map(e=>e.region)))
+        var regions = Array.from(new Set(data.map(e=>e.region))).sort()
 
         const color = d3.scaleOrdinal()
             .domain(regions)
@@ -218,9 +207,8 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
             .append("div")
             .attr("class", "tooltip")
             .style("visibility", "hidden")
-        // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+
         const mouseover = function (d) {
-            // Highlight the specie that is hovered
 
             highlight(d)
             var parameter = "";
@@ -231,9 +219,7 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
                 case 'BMI':
                     parameter = "BMI: " + `<b>${d.BMI}</b>`
                     break;
-                case 'infant_deaths':
-                    parameter = "Infant Deaths: " + `<b>${d.infant_deaths}</b>`
-                    break;
+
                 default:
                     parameter = "Life Expectancy: " + `<b>${d.life_expectancy}</b>`
             }
@@ -253,11 +239,15 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
 
             removeHighlight(d)
 
-            tooltip.html(``).style("visibility", "hidden");
+            console.log("mouseleave")
+            tooltip.html(``)
+                .style("visibility", "hidden")
+
+
         }
 
         function highlight(d){
-            selected_specie =typeof d === 'string'? d: d.region
+           var selectedRegion =typeof d === 'string'? d: d.country_code
 
             d3.selectAll(".dot")
                 .transition()
@@ -265,26 +255,78 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
                 .style("fill", "lightgrey")
                 .attr("r", 3)
 
-            d3.selectAll(".dot." + selected_specie.replace(/\s/g, "."))
+            d3.selectAll(".dot." + selectedRegion.replace(/\s/g, "."))
                 .transition()
                 .duration(200)
-                .style("fill", color(selected_specie))
+                .style("fill", color(d.region))
                 .attr("r", 7)
         }
+
+
+        var lineOpacity = "1";
+        var lineOpacityHover = "0.85";
+        var otherLinesOpacityHover = "0.1";
+        var lineStroke = "2px";
+        var lineStrokeHover = "3px";
+
         function removeHighlight(d){
+            var selectedRegion =typeof d === 'string'? d: d.region
+
             d3.selectAll(".dot")
                 .transition()
                 .duration(200)
                 .style("fill", d => color(d.region))
                 .attr("r", 5)
+
+
+            d3.selectAll(".legend")
+                .style('opacity', lineOpacity);
+
+            d3.selectAll("._" + selectedRegion.replaceAll(" ", ""))
+                .style("stroke-width", lineStroke)
+                .style("cursor", "none");
         }
-        // Add dots
+
+
+        function highlightRegion(d){
+
+           var regionData = data.filter(function (obj) {
+               return obj.region===d;
+           })
+
+            d3.selectAll(".dot")
+                .transition()
+                .duration(200)
+                .style("fill", "lightgrey")
+                .attr("r", 3)
+
+
+            d3.selectAll('.legend')
+                .style('opacity', otherLinesOpacityHover);
+
+
+            d3.selectAll("._"+d.replaceAll(" ", ""))
+                .style('opacity', lineOpacityHover)
+                .style("stroke-width", lineStrokeHover)
+                .style("cursor", "pointer");
+
+
+
+            regionData.forEach(e=>{
+                d3.selectAll(".dot." + e.country_code.replace(/\s/g, "."))
+                    .transition()
+                    .duration(200)
+                    .style("fill", color(e.region))
+                    .attr("r", 7)
+            })
+
+        }
         svg.append('g')
             .selectAll("dot")
             .data(data)
             .enter()
             .append("circle")
-            .attr("class", function (d) { return "dot " + d.region })
+            .attr("class", function (d) { return "dot " + d.country_code })
 
             .attr("cy", function (d) {
 
@@ -302,13 +344,15 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
 
         var size = 12
         var legend = svg.append('g')
-            .attr('class', 'legend')
             .attr('transform', 'translate(' + (width + 100) + ', -100)');
 
         legend.selectAll('rect')
             .data(regions)
             .enter()
             .append('rect')
+            .attr('class', function (d){
+                return "legend _"+d.replaceAll(" ", "")
+            })
             .attr('x', 0)
             .attr("y", function(d,i){ return 100 + i*(size+10)})
             .attr('width', size)
@@ -316,8 +360,7 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
             .attr('fill', function(d, i){
                 return color(d);
             })
-            .on("mouseover", highlight)
-            //  .on("mousemove", mousemove)
+            .on("mouseover", highlightRegion)
             .on("mouseleave", removeHighlight)
 
         legend.selectAll('text')
@@ -325,7 +368,9 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
             .enter()
 
             .append('text')
-            .attr("class", "tooltip")
+            .attr('class', function (d){
+                return "legend _"+d.replaceAll(" ", "")
+            })
             .attr("padding", "0px")
             .text(function(d){
                 return d;
@@ -339,19 +384,19 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol", s
             })
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
-            .on("mouseover", highlight)
+            .on("mouseover", highlightRegion)
             //.on("mousemove", mousemove)
             .on("mouseleave", removeHighlight)
 
         svg.append("text")
             .attr("text-anchor", "end")
-            .attr("x", width  - 250)
+            .attr("x", width*.6)
             .attr("y", height + 60)
-            .text("Life Expectancy")
+            .text("Life Expectancy (Years)")
             .style("fill","white");
 
         svg.append("text")
-            .attr("x", -250)
+            .attr("x", selectedParameter==="BMI"? -width*.3:-width/2)
             .attr("y", -50)
             .text(selectedParameter === "alcohol"? "Alcohol Consumption (In liters)": "BMI")
             .style("fill","white")

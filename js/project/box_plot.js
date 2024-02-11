@@ -35,7 +35,7 @@ function drawBoxPlot(selectedYear ="2000"){
             });
         }
 
-        var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+        var sumstat = d3.nest()
             .key(function(d) { return d.status;})
             .rollup(function(d) {
                 q1 = d3.quantile(d.map(function(g) { return g.life_expectancy;}).sort(d3.ascending),.25)
@@ -49,7 +49,6 @@ function drawBoxPlot(selectedYear ="2000"){
             .entries(data)
 
 
-        console.log(sumstat)
 
 
         var x = d3.scaleBand()
@@ -61,6 +60,8 @@ function drawBoxPlot(selectedYear ="2000"){
 
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x))
+
             .attr("class", "axis")
 
 
@@ -76,7 +77,7 @@ function drawBoxPlot(selectedYear ="2000"){
 
 
         var color = d3.scaleSequential()
-            .interpolator(d3.interpolateBuPu)
+            .interpolator(d3.interpolateBlues)
             .domain([0, d3.max(data, function (d) {
                 return +d.life_expectancy;
             })])
@@ -116,7 +117,7 @@ function drawBoxPlot(selectedYear ="2000"){
             })
             .attr("width", boxWidth )
             .attr("stroke", "white")
-            .style("fill", "#fc3565")
+            .style("fill", "steelblue")
             .style("opacity", 0.7)
 
         // Show the median
@@ -143,7 +144,7 @@ function drawBoxPlot(selectedYear ="2000"){
         var mouseover = function(d) {
 
             tooltip
-                .html("Country: " + `<b>${d.country}</b>` + "<br>" + "Life Expectancy: " + `<b>${d.life_expectancy}</b>`)
+                .html("Country: " + `<b>${d.country}</b>` + "<br>" + "Life Expectancy: " + `<b>${d.life_expectancy}</b> Years`)
                 .style("visibility", "visible")
             d3.select(this).style("fill", "#fc3565");
 
@@ -175,6 +176,13 @@ function drawBoxPlot(selectedYear ="2000"){
             .on("mouseover", mouseover)
             .on("mousemove", mousemove)
             .on("mouseleave", mouseleave)
+
+        svg.append("text")
+            .attr("x",  -width*.75)
+            .attr("y", -80)
+            .text("Life Expectancy (In Years)")
+            .style("fill","white")
+            .attr("transform", "rotate(-90)");
 
     })
 }

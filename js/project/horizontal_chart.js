@@ -16,7 +16,7 @@ $("#yearSelectHorizontal").on('change', function(){
 
 function drawHorizontalChart(selectedYear ="2000"){
     d3.select("#horizontal").selectAll("svg").remove();
-    var margin = { top: 20, right: 110, bottom: 30, left: 160 },
+    var margin = { top: 20, right: 110, bottom: 60, left: 160 },
         width = 550 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
 
@@ -36,7 +36,8 @@ function drawHorizontalChart(selectedYear ="2000"){
             .key(function (d) {
                 return d.region;
             })
-            .entries(data);
+            .entries(data)
+            .sort((a, b) => d3.ascending(a.key, b.key));
 
 
 
@@ -62,7 +63,7 @@ function drawHorizontalChart(selectedYear ="2000"){
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            xScale.domain([0, d3.max(region.values, function (d) { return d.life_expectancy; })]);
+            xScale.domain([20, d3.max(region.values, function (d) { return d.life_expectancy; })]);
             yScale.domain(
                 region.values.map(function (d) {
                     return d.country;
@@ -73,7 +74,7 @@ function drawHorizontalChart(selectedYear ="2000"){
             svg.append("g").attr("class", "axis").call(d3.axisLeft(yScale))
             svg.append("g")
                 .attr("transform", `translate(0, ${height})`)
-                .call(d3.axisBottom(xScale))
+                .call(d3.axisBottom(xScale).ticks(6))
                 .attr("class", "axis")
 
 
@@ -115,7 +116,7 @@ function drawHorizontalChart(selectedYear ="2000"){
                     });
                 });
 
-            // Add title for each chart
+
             svg
                 .append("text")
                 .attr("x", width / 2)
@@ -123,6 +124,18 @@ function drawHorizontalChart(selectedYear ="2000"){
                 .attr("text-anchor", "middle")
                 .style("font-size", "14px")
                 .text(region.key).attr("class", "axis");
+
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", height + margin.top + 20) // Adjust position for x-label
+                .attr("text-anchor", "middle")
+                .attr("class","axis")
+
+                .style("font-size", "12px")
+                .text("Life Expectancy (Years)");
+
+
+
         });
     })
 }

@@ -41,6 +41,9 @@ function drawBubbleChart(selectedYear="2000", selectedParameter="GDP"){
             "translate(" + margin.left + "," + margin.top + ")");
     d3.csv("./data/project/data.csv", function(data) {
 
+        data  = data.sort(function(a, b){return b.population - a.population});
+
+
         if (selectedYear) {
             data = data.filter(function (e) {
 
@@ -48,8 +51,8 @@ function drawBubbleChart(selectedYear="2000", selectedParameter="GDP"){
             });
         }
 
-        var uniqueNames = Array.from(new Set(data.map(e=>e.country)))
-        var uniqueRegions = Array.from(new Set(data.map(e=>e.region)))
+        var uniqueNames = Array.from(new Set(data.map(e=>e.country))).sort()
+        var uniqueRegions = Array.from(new Set(data.map(e=>e.region))).sort()
 
         var x = d3.scaleLinear()
             .domain([Math.min(...data.map(e=>e.life_expectancy)), Math.max(...data.map(e=>e.life_expectancy))]).nice()
@@ -63,7 +66,7 @@ function drawBubbleChart(selectedYear="2000", selectedParameter="GDP"){
         if(selectedParameter==="schooling"){
             domain = [Math.min(...data.map(e=>e.schooling)), Math.max(...data.map(e=>e.schooling))]
         }else if (selectedParameter==="GDP"){
-            domain = [Math.min(...data.map(e=>e.GDP)), 10000]
+            domain =[Math.min(...data.map(e=>e.GDP)), Math.max(...data.map(e=>e.GDP))]
         }else domain = [ Math.min(...data.map(e=>e.income_composition_of_resources)), Math.max(...data.map(e=>e.income_composition_of_resources))]
         var y = d3.scaleLinear()
             .domain(domain)
@@ -74,12 +77,13 @@ function drawBubbleChart(selectedYear="2000", selectedParameter="GDP"){
             .attr("class", "axis");
 
         var z = d3.scaleLinear()
-            .domain([0, Math.max(...data.map(e=>e.population))]).nice()
-            .range([ 4, 50]).nice();
+            .domain([0, Math.max(...data.map(e=>e.population))])
+            .range([ 4, 30]);
+
 
         var color = d3.scaleOrdinal()
             .domain(Array.from(uniqueRegions))
-            .range(d3.schemePaired);
+            .range(d3.schemeCategory10);
 
         var tooltip = d3.select("#bubble")
             .append("div")
@@ -88,6 +92,7 @@ function drawBubbleChart(selectedYear="2000", selectedParameter="GDP"){
             .style("visibility", "hidden")
 
         var mouseover = function(d) {
+            var intlFormat = new Intl.NumberFormat()
 
             var parameter = "";
             switch (selectedParameter) {
@@ -95,19 +100,19 @@ function drawBubbleChart(selectedYear="2000", selectedParameter="GDP"){
                     parameter = "Schooling: " + `<b>${d.schooling}</b>`
                     break;
                 case 'GDP':
-                    parameter = "GDP: " + `<b>${d.GDP}</b>`
+                    parameter = "GDP: " + `<b>${intlFormat.format(d.GDP)} $</b>`
                     break;
                 case 'income_composition_of_resources':
                     parameter = "Income Composition of Resources: " + `<b>${d.income_composition_of_resources}</b>`
                     break;
                 default:
-                    parameter = "GDP: " + `<b>${d.GDP}</b>`
+                    parameter = "GDP: " + `<b>${d.GDP} $</b>`
             }
 
 
             tooltip
                 .html("Country: " + `<b>${d.country}</b>` + "<br>" + "Life Expextancy: " + `<b>${d.life_expectancy}</b>`
-                    + "<br>" + "Population: " + `<b>${d.population}</b>`
+                    + "<br>" + "Population: " + `<b>${d.population>0?intlFormat.format(d.population): "Unknown"}</b>`
                     + "<br>" + "Year: " + `<b>${d.year}</b>`
                     +"<br>" + parameter
                 )
@@ -204,7 +209,7 @@ function drawBubbleChart(selectedYear="2000", selectedParameter="GDP"){
             .attr("x", selectedParameter ==="income_composition_of_resources"? -250:-150)
             .attr("y", -80)
             .text(selectedParameter ==="schooling"?"Schooling": selectedParameter ==="income_composition_of_resources"?
-                "Income Composition of Resources" : "GDP/capita")
+                "Income Composition of Resources" : "GDP / capita ($)")
             .style("fill","white")
             .attr("transform", "rotate(-90)");
     })

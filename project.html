@@ -25,7 +25,7 @@
             <div class="row">
               <div class="col-sm-8">
                 <div class="section-title">
-                  <h1>Final Project - Life Expectancy</h1>
+                  <h1>What are the factors that affect Life Expectancy in different countries?</h1>
                 </div>
               </div>
             </div>
@@ -36,11 +36,28 @@
                 <div class="col-md-12 col-sm-4 mix">
 
                   <!--SECTION - COLORPLETH MAP-->
-                  <h2>What are the factors that affect Life Expectancy in different countries?</h2>
-                  <p>This is our story that we want to tell the user.. discription of the data - link for the data</p>
-                  <h3>First Graph - Colorpleth map</h3>
-                  <br>
 
+                  <h3>Introduction</h3>
+                  <p>Life Expectancy is an important measure of a population's general health and well-being.
+                    It reflects the efficiency of public health initiative, socioeconomic factors, and health care systems.
+                  Life Expectancy varies between different countries due to things like improved lifestyle,
+                    easy access to healthcare system, and general quality of life.
+                  In this project, we will analyze a diverse array of factors that might affect life expectancy,
+                    by examining trends over time
+                    and comparing across regions and income levels, we seek to uncover patterns, correlations, and disparities
+                    that contribute to differences in life expectancy.</p>
+                  <br>
+                  <br>
+                  <h3>World Health at a Glance: A Geographical Exploration of Life Expectancy and Mortality Rates</h3>
+                  <br>
+                  <p>The following colorpleth map provides a powerful overview of global health disparities by
+                  visualizing the spatial distribution of important health indicators such as life expectancy, adult mortality, and infant deaths.
+                  Darker colors refers to higher values whereas lighter ones refers to lower values depending on the parameter being viewed,
+                    enabling dynamic exploration of health outcomes worldwide.
+                    The users can also choose the year from a dropdown menu,
+                    they can also hover over a certain country to display more details about the data being showed.
+                    This map uncovers insights into global health trends and disparities and provides a deeper understanding
+                    of the factors contributing to differences in life expectancy across countries</p>
                   <div class="selects-wrapper">
                     <label for="yearSelect" style="margin: 10px"><span>Choose a Year </span></label>
                   <select id="yearSelect">
@@ -61,11 +78,13 @@
 
                   <!--END - COLORPLETH MAP-->
 
-
+                  <br><br>
                   <!--SECTION - HORIZONTAL PLOT-->
-                  <h2>What are the factors that affect Life Expectancy in different countries?</h2>
-                  <p>This is our story that we want to tell the user.. discription of the data - link for the data</p>
-                  <h3>Second Graph - Horizontal with small multiples</h3>
+                  <h3>Leaders in Life Expectancy by Region</h3>
+                  <p>The following multiple bar chart shows more precise information about Life expectancy across different regions.
+                  Each bar represents a continent and highlights the top 5 countries in life expectancy,
+                    along with an "Others" category. This was a design choice to make the visualisation easier to analyze.
+                    Simply choose the year from the dropdown menu to see how countries within each continent compare over time</p>
                   <br>
 
                   <div class="selects-wrapper">
@@ -81,10 +100,15 @@
                   <!--END - HORIZONTAL PLOT-->
 
 
+                  <br><br>
                   <!--SECTION - SCATTER PLOT-->
-                  <h2>What are the factors that affect Life Expectancy in different countries?</h2>
-                  <p>This is our story that we want to tell the user.. discription of the data - link for the data</p>
-                  <h3>THIRD Graph - Scatter plot</h3>
+                  <h3>Analyzing how health indicators affect Life Expectancy across regions</h3>
+                  <p>The scatter plot visually represents the relationship between life expectancy and specific
+                    health parameters such as BMI (Body Mass Index) and alcohol consumption. Each data point on the
+                    plot represents a country, with its position determined by its life expectancy and the chosen health
+                    parameter. Users can select the year of interest from a dropdown menu and choose one or more continents
+                    using a multi-select dropdown. This interactive feature enables users to explore how these health
+                    factors correlate with life expectancy over time and across different regions.</p>
                   <br>
                   <div class="selects-wrapper">
                     <label for="yearSelectScatter" style="margin: 5px"><span>Choose a Year </span></label>
@@ -113,9 +137,9 @@
                       <option value="Asia" selected>Asia</option>
                       <option value="Europe" selected>Europe</option>
                       <option value="Africa" selected>Africa</option>
-                      <option value="North America">North America</option>
-                      <option value="South America">South America</option>
-                      <option value="Oceania">Oceania</option>
+                      <option value="North America" selected>North America</option>
+                      <option value="South America" selected>South America</option>
+                      <option value="Oceania" selected>Oceania</option>
 
                   </select>
                   </div>
@@ -130,11 +154,16 @@
 
 
 
-
+                  <br><br>
                   <!--SECTION - BUBBLE PLOT-->
                   <h2>Economic Impact vs. Life Expectancy Bubble Chart</h2>
-                  <p>This Bubble Chart illustrates the relationship between a country's economic impact, represented by Gross Domestic Product (GDP), and its life expectancy. Each bubble corresponds to a country, positioned based on its GDP (Y-axis) and life expectancy (X-axis). The size of each bubble represents GDP, with larger bubbles indicating higher life expectancy. But that is not always the case, this means that there might be other factors related to the life expectancy</p>
-                  <h3>FOURTH Graph - Bubble chart</h3>
+                  <p>In the following bubble chart, we try to explore the relationship between life expectancy
+                  and socioeconomic factors like (GDP, income composition of resources, and schooling).
+                  each bubble represents a country, the size of the bubble demonstrates the size
+                    of the population of that country, x-Axis is the life expectancy and y-Axis is the selected parameter.
+                  the user can select the year from the dropdown list, and hovering over the bubble will show additional and specific data.
+                  we can say in general that if a country have a higher socioeconomic parameter, it can have a higher life expectancy.
+                  but that is not always the case.</p>
                   <br>
                   <div class="selects-wrapper">
                     <label for="yearSelectBubble" style="margin: 10px"><span>Choose a Year </span></label>
@@ -157,9 +186,15 @@
 
 
                   <!--SECTION - BOX PLOT-->
-                  <h2>HEADLINE</h2>
-                  <p>DESCRIPTION</p>
-                  <h3>FIFTH Graph - BOX chart</h3>
+                  <h3>Life Expectancy Disparity: Developing vs. Developed Countries</h3>
+                  <p>The huge disparity in life expectancy between "developing" and "developed" continents
+                    is illustrated by this box plot. The distribution of life expectancy values for the chosen
+                    year within these two categories is shown by each box. Each box's margins indicate the
+                    interquartile range (IQR), while the central line shows the median life expectancy.
+                    Exceptions are highlighted by outliers that go beyond the whiskers. We can say that developed continents generally
+                    have higher average life expectancies and lower variability in life expectancy between the first and third quartiles,
+                    with minimum and maximum life expectancies also being higher than in developing countries</p>
+                  <br>
                   <br>
                   <div class="selects-wrapper">
                     <label for="yearSelectBox" style="margin: 10px"><span>Choose a Year </span></label>
@@ -174,9 +209,12 @@
                   <!--SECTION - LINE PLOT-->
                   <br>
                   <br>
-                  <h2>Line Chart</h2>
-                  <p>Line Chart</p>
-                  <h3>SIXTH Graph - Line chart</h3>
+                  <h3>Trends in Life Expectancy Over Time</h3>
+                  <p>This line chart illustrates the evolution of life expectancy over time for a selected region,
+                    providing insights into the changing health landscape. Each line represents the life expectancy
+                    trend for a specific continent, enabling viewers to compare how life expectancy has changed over time in
+                    different continents of the world. Additionally, an aggregate line that represent the world is added.
+                    we can gain insight into whether life expectancy is improving or not. overall life expectancy is increasing across the world.</p>
                   <br>
 
                   <div id="linechart"></div>

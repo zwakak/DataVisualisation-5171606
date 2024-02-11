@@ -129,7 +129,7 @@ function drawColorpleth(selectedYear="2000", selectedParameter="life_expectancy"
                 switch (selectedParameter) {
                     case 'life_expectancy':
 
-                        parameter = "Life Expectancy: " + `<b>${d.properties.life_expectancy??"Unknown"}</b>`
+                        parameter = "Life Expectancy: " + `<b>${d.properties.life_expectancy??"Unknown"}</b> ${d.properties.life_expectancy?"Years":""}`
                         break;
                     case 'adult_mortality':
                         parameter = "Adult Mortality: " + `<b>${d.properties.adult_mortality??"Unknown"}</b>`
@@ -138,7 +138,7 @@ function drawColorpleth(selectedYear="2000", selectedParameter="life_expectancy"
                         parameter = "Infant Deaths: " + `<b>${d.properties.infant_deaths??"Unknown"}</b>`
                         break;
                     default:
-                        parameter = "Life Expectancy: " + `<b>${d.properties.life_expectancy??"Unknown"}</b>`
+                        parameter = "Life Expectancy: " + `<b>${d.properties.life_expectancy??"Unknown"}</b> ${d.properties.life_expectancy?"Years":""} `
 
                 }
 

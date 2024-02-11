@@ -7,7 +7,7 @@ function drawLineChart(){
         height = 500 - margin.top - margin.bottom;
     const svg = d3.select('#linechart')
         .append('svg')
-        .attr('width', 1000 + width + margin.left + margin.right)
+        .attr('width',300+width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
         .append('g')
         .attr('transform', `translate(${margin.left},${margin.top})`);
@@ -17,7 +17,7 @@ function drawLineChart(){
 
         data.forEach(d => {
             d.life_expectancy = parseFloat(d.life_expectancy)
-
+            d.year = d.year.toString()
         })
 
 
@@ -32,25 +32,21 @@ function drawLineChart(){
 
 
 
-// Calculate global average for each year
         const globalAverageData = d3.nest()
             .key(d => d.year)
             .rollup(function (d) {
                 return d3.mean(d, v => v.life_expectancy);
             })
-            .entries(data);
+            .entries(data).sort((a, b) => d3.ascending(a.key, b.key));
 
-// Add a new entry for the global average to the nestedData
         nestedData.push({
             key: "World",
             values: globalAverageData
         });
 
-        // Create a color scale for regions
         const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
             .domain(data.map(d => d.region));
 
-        // Create scales, axes, and draw lines based on the data
         const xScale = d3.scaleLinear()
             .domain([d3.min(data, d => d.year), d3.max(data, d => d.year)])
             .range([0, width])
@@ -70,7 +66,7 @@ function drawLineChart(){
 
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
-            .call(xAxis).attr("class", "axis");
+            .call(xAxis.tickFormat(d3.format('.0f'))).attr("class", "axis");
 
         svg.append("g")
             .call(yAxis).attr("class", "axis");
@@ -85,8 +81,6 @@ function drawLineChart(){
 
         function mouseOverLine(d) {
 
-
-            console.log(d)
             d3.selectAll('.line')
                 .style('opacity', otherLinesOpacityHover);
             d3.selectAll('.legend')
@@ -194,13 +188,13 @@ function drawLineChart(){
 
         svg.append("text")
             .attr("text-anchor", "end")
-            .attr("x", width  - 150)
+            .attr("x", width/2)
             .attr("y", height + 60)
             .text("Year")
             .style("fill","white");
 
         svg.append("text")
-            .attr("x",  -250)
+            .attr("x",  -width/2.5)
             .attr("y", -80)
             .text("Life Expectancy")
             .style("fill","white")
