@@ -48,6 +48,8 @@ function drawHorizontalChart(selectedYear ="2000"){
 
 
         var xScale = d3.scaleLinear().range([0, width]);
+        xScale.domain([20, d3.max(data, function (d) { return d.life_expectancy; })]).nice();
+
         var yScale = d3.scaleBand().range([0, height]).padding(0.1);
         const tooltip = d3.select("#horizontal")
             .append("div")
@@ -63,7 +65,6 @@ function drawHorizontalChart(selectedYear ="2000"){
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            xScale.domain([20, d3.max(region.values, function (d) { return d.life_expectancy; })]);
             yScale.domain(
                 region.values.map(function (d) {
                     return d.country;
@@ -103,7 +104,7 @@ function drawHorizontalChart(selectedYear ="2000"){
 
                     tooltip
                         .html("Country: " + `<b>${d.country}</b>` +
-                            "<br>" + "Life Expectancy: " + `<b>${d.life_expectancy} Years</b>`+
+                            "<br>" + "Life Expectancy: " + `<b>${d.life_expectancy.toFixed(2)} Years</b>`+
                             "<br>" +"Year: " + `<b>${selectedYear}</b>`)
                         .style("visibility", "visible")
                     d3.select(this).attr("fill", "#fc3565");
@@ -127,11 +128,10 @@ function drawHorizontalChart(selectedYear ="2000"){
 
             svg.append("text")
                 .attr("x", width / 2)
-                .attr("y", height + margin.top + 20) // Adjust position for x-label
+                .attr("y", height + margin.top + 30) // Adjust position for x-label
                 .attr("text-anchor", "middle")
                 .attr("class","axis")
 
-                .style("font-size", "12px")
                 .text("Life Expectancy (Years)");
 
 

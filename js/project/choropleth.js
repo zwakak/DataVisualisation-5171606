@@ -33,19 +33,19 @@ $("#parameterSelect").on('change', function(){
 
 
 function drawColorpleth(selectedYear="2000", selectedParameter="life_expectancy"){
-    d3.selectAll("#colorpleth").select("svg").remove();
+    d3.selectAll("#choropleth").select("svg").remove();
 
     var margin = {top: 20, right: 20, bottom: 20, left: 20},
         width = 900 - margin.left - margin.right,
         height = 680 - margin.top - margin.bottom;
 
 
-    var svg = d3.select("#colorpleth").append("svg")
+    var svg = d3.select("#choropleth").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+            "translate(" + margin.left + "," + (margin.top+30) + ")");
 
     var projection = d3.geoMercator()
         .scale((width) / (2 * Math.PI))
@@ -118,7 +118,7 @@ function drawColorpleth(selectedYear="2000", selectedParameter="life_expectancy"
 
           //  projection.fitSize([width, height], topo)
 
-            const tooltip = d3.select("#colorpleth")
+            const tooltip = d3.select("#choropleth")
                 .append("div")
                 .attr("class", "tooltip")
                 .style("visibility", "hidden")
@@ -209,7 +209,7 @@ function drawColorpleth(selectedYear="2000", selectedParameter="life_expectancy"
 
             var legend = svg.append("g")
                 .attr("class", "legend")
-                .attr("transform", "translate(" + (width - legendWidth - 20) + "," + (height *.01) + ")");
+                .attr("transform", "translate(" + ((width - legendWidth) /2) + "," + (-height*.01) + ")");
 
             var legendColors = colorScale.ticks(10);
 

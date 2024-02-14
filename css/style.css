@@ -4,6 +4,9 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Roboto Slab', sans-serif;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto
 }
 .container {
   max-width: 1100px;

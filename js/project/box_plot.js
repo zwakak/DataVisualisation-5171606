@@ -16,16 +16,16 @@ $("#yearSelectBox").on('change', function(){
 
 function drawBoxPlot(selectedYear ="2000"){
     d3.select("#box").selectAll("svg").remove();
-    var margin = { top: 20, right: 110, bottom: 30, left: 160 },
-        width = 550 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom;
+    var margin = {top: 20, right: 20, bottom: 150, left: 150},
+        width = 600 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
     var svg = d3.select("#box")
         .append("svg")
-        .attr("width",width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", 100+ height + margin.top + margin.bottom)
         .append("g")
         .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+            "translate(" + margin.left + "," + (margin.top+100) + ")");
     d3.csv("./data/project/data.csv", function(data){
 
         if(selectedYear){
@@ -38,17 +38,19 @@ function drawBoxPlot(selectedYear ="2000"){
         var sumstat = d3.nest()
             .key(function(d) { return d.status;})
             .rollup(function(d) {
-                q1 = d3.quantile(d.map(function(g) { return g.life_expectancy;}).sort(d3.ascending),.25)
-                median = d3.quantile(d.map(function(g) { return g.life_expectancy;}).sort(d3.ascending),.5)
-                q3 = d3.quantile(d.map(function(g) { return g.life_expectancy;}).sort(d3.ascending),.75)
-                interQuantileRange = q3 - q1
-                min = q1 - 1.5 * interQuantileRange
-                max = q3 + 1.5 * interQuantileRange
+                var q1 = d3.quantile(d.map(function(g) { return parseFloat(g.life_expectancy);}).sort(d3.ascending),.25)
+                var median = d3.quantile(d.map(function(g) { return parseFloat(g.life_expectancy);}).sort(d3.ascending),.5)
+                var q3 = d3.quantile(d.map(function(g) { return parseFloat(g.life_expectancy);}).sort(d3.ascending),.75)
+                var interQuantileRange = q3 - q1
+                var min = q1 - 1.5 * interQuantileRange
+                var max = q3 + 1.5 * interQuantileRange
+
                 return({q1: q1, median: median, q3: q3, interQuantileRange: interQuantileRange, min: min, max: max})
             })
             .entries(data)
 
 
+        console.log(sumstat)
 
 
         var x = d3.scaleBand()
@@ -56,7 +58,7 @@ function drawBoxPlot(selectedYear ="2000"){
 
             .domain(sumstat.map(d => d.key))
             .paddingInner(1)
-            .paddingOuter(.5);
+            .paddingOuter(.4);
 
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
@@ -67,9 +69,10 @@ function drawBoxPlot(selectedYear ="2000"){
 
         var y = d3.scaleLinear()
             .domain([0, d3.max(data, function (d) {
-                return d.life_expectancy;
+                return parseFloat(d.life_expectancy);
             })])
             .range([height, 0])
+            .nice()
 
         svg.append("g").call(d3.axisLeft(y))
 
@@ -84,9 +87,9 @@ function drawBoxPlot(selectedYear ="2000"){
 
         svg.append("text")
             .attr("text-anchor", "end")
-            .attr("x", width / 2 - 50)
+            .attr("x", width / 2)
             .attr("y", height + 60)
-            .text("Height")
+            .text("Status")
             .style("fill", "white");
 
         svg
@@ -96,8 +99,9 @@ function drawBoxPlot(selectedYear ="2000"){
             .append("line")
             .attr("x1", function(d){return(x(d.key))})
             .attr("x2", function(d){return(x(d.key))})
-            .attr("y1", function(d){return(y(d.value.min))})
-            .attr("y2", function(d){return(y(d.value.max))})
+            .attr("y1", function(d) { return y(Math.max(d.value.min, d3.min(data, function(d) { return d.life_expectancy; }))); }) // Limit the lower end to the minimum life expectancy
+            .attr("y2", function(d) { return y(Math.min(d.value.max, d3.max(data, function(d) { return d.life_expectancy; }))); }) // Limit the upper end to the maximum life expectancy
+
             .attr("stroke", "white")
             .style("width", 40)
 
@@ -126,12 +130,17 @@ function drawBoxPlot(selectedYear ="2000"){
             .data(sumstat)
             .enter()
             .append("line")
-            .attr("x1", function(d){return(x(d.key)-boxWidth/2) })
+            .attr("x1", function(d){
+
+                return(x(d.key)-boxWidth/2)
+            })
             .attr("x2", function(d){return(x(d.key)+boxWidth/2) })
             .attr("y1", function(d){
 
                 return(y(d.value.median))})
-            .attr("y2", function(d){return(y(d.value.median))})
+            .attr("y2", function(d){
+
+                return(y(d.value.median))})
             .attr("stroke", "white")
 
             .style("width", 80)
@@ -144,7 +153,10 @@ function drawBoxPlot(selectedYear ="2000"){
         var mouseover = function(d) {
 
             tooltip
-                .html("Country: " + `<b>${d.country}</b>` + "<br>" + "Life Expectancy: " + `<b>${d.life_expectancy}</b> Years`)
+                .html("Country: " + `<b>${d.country}</b>` + "<br>" +
+                    "Life Expectancy: " + `<b>${d.life_expectancy}</b> Years`+ "<br>"+
+                    "Status: " + `<b>${d.status}</b>`
+                )
                 .style("visibility", "visible")
             d3.select(this).style("fill", "#fc3565");
 
@@ -162,6 +174,10 @@ function drawBoxPlot(selectedYear ="2000"){
         }
 
 // Add individual points with jitter
+
+       /* var outliers = data.filter(function(d) {
+            return d.life_expectancy < q1 - 1.5 * interQuantileRange || d.life_expectancy > q3 + 1.5 * interQuantileRange;
+        });*/
         var jitterWidth = 50
         svg
             .selectAll("indPoints")
@@ -177,8 +193,49 @@ function drawBoxPlot(selectedYear ="2000"){
             .on("mousemove", mousemove)
             .on("mouseleave", mouseleave)
 
+        var legendWidth = 250;
+        var legendHeight = 20;
+
+        var legend = svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", "translate(" + (legendWidth/2) + "," + (-95) + ")");
         svg.append("text")
-            .attr("x",  -width*.75)
+            .attr("x",  legendWidth*.6)
+            .attr("y", -105)
+            .text("Life Expectancy (In Years)")
+            .style("fill","white")
+        var legendColors = color.ticks(10);
+
+        legend.selectAll("rect")
+            .data(legendColors)
+            .enter().append("rect")
+            .attr("x", function (d, i) {
+                return i * (legendWidth / legendColors.length);
+            })
+            .attr("width", legendWidth / legendColors.length)
+            .attr("height", legendHeight)
+            .style("fill", function (d) {
+                return color(d);
+            });
+
+        legend.selectAll("text")
+            .data(legendColors)
+            .enter().append("text")
+            .attr("x", function (d, i) {
+                return i * (legendWidth / legendColors.length) + (legendWidth / legendColors.length) / 2;
+            })
+            .attr("y", legendHeight + 20)
+            .attr("text-anchor", "middle")
+            .attr("fill", "white")
+            .text(function (d) {
+                return d; // Format the text as needed
+            });
+
+
+
+
+        svg.append("text")
+            .attr("x",  -width/2)
             .attr("y", -80)
             .text("Life Expectancy (In Years)")
             .style("fill","white")

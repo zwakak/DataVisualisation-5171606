@@ -17,7 +17,7 @@ function drawLineChart(){
 
         data.forEach(d => {
             d.life_expectancy = parseFloat(d.life_expectancy)
-            d.year = d.year.toString()
+            d.year = d.year
         })
 
 
@@ -78,14 +78,19 @@ function drawLineChart(){
         var lineStroke = "2px";
         var lineStrokeHover = "3px";
 
+        var circleOpacity = '0.85';
+        var circleOpacityOnLineHover = "0"
 
         function mouseOverLine(d) {
 
             d3.selectAll('.line')
                 .style('opacity', otherLinesOpacityHover);
-            d3.selectAll('.legend')
+
+            d3.selectAll('.legendLine')
                 .style('opacity', otherLinesOpacityHover);
 
+            d3.selectAll('.dotMaxLine')
+                .style('opacity', circleOpacityOnLineHover);
 
             d3.selectAll("._"+d.replaceAll(" ", ""))
                 .style('opacity', lineOpacityHover)
@@ -99,12 +104,44 @@ function drawLineChart(){
             d3.selectAll(".line")
                 .style('opacity', lineOpacity);
 
-            d3.selectAll(".legend")
+            d3.selectAll(".legendLine")
                 .style('opacity', lineOpacity);
+            d3.selectAll('.dotMaxLine')
+                .style('opacity', circleOpacity);
 
             d3.selectAll("._" + d.replaceAll(" ", ""))
                 .style("stroke-width", lineStroke)
                 .style("cursor", "none");
+        }
+
+        const tooltip =d3.select("#linechart")
+            .append("div")
+            .style('visibility', 'hidden')
+            .attr("class", "tooltip")
+
+
+        function mouseover() {
+            tooltip.style('z-index', 1);
+            tooltip.transition().style('opacity', 0.9);
+            d3.select(this).transition().attr('r', 6);
+
+        }
+
+        function mouseout() {
+            tooltip.style('z-index', -1);
+            tooltip.transition().style('opacity', 0);
+            d3.select(this).transition().attr('r', 4);
+        }
+
+        function mousemove(d) {
+            tooltip.style('visibility', 'visible')
+
+            tooltip
+                .html(
+                    `Date: <b> ${d.key}</b><br>` +
+                    `Life Expectancy: <b> ${d.value}</b><br>`)
+                .style('top', `${event.pageY}px`)
+                .style('left', `${event.pageX + 20}px`);
         }
 
         // Draw lines for each region
@@ -127,6 +164,29 @@ function drawLineChart(){
                 .attr("d", line)
                 .on("mouseover", d=>mouseOverLine(region))
                 .on("mouseout", d=>mouseOutLine(region));
+
+                svg.selectAll('.dots')
+                    .data(group.values)
+                    .enter().append('circle')
+                    .attr('id', function(d) {
+                        return "dotForLine";
+                    })
+                    .attr('cx', function(d) {
+                        return xScale(parseInt(d.key));
+                    })
+                    .attr('cy', function(d) {
+                        return yScale(d.value);
+                    })
+                    .attr("class","dotMaxLine")
+                    .attr('r', 3.5)
+                    .style('fill', function(d) {
+                        return colorScale(group.key); // Use group.key instead of region
+                    })
+                    .style('stroke', 'white')
+                    .style('stroke-width', '1px')
+                    .on('mouseover', mouseover)
+                    .on('mouseout', mouseout)
+                    .on('mousemove', mousemove);
         }
         )
         var size = 12
@@ -148,7 +208,7 @@ function drawLineChart(){
             .attr('width', size)
             .attr('height', size)
             .attr('class', function (d){
-                return "tooltip legend _"+d.replaceAll(" ", "")
+                return "tooltip legendLine _"+d.replaceAll(" ", "")
             })
             .attr('fill', function(d, i){
 
@@ -174,7 +234,7 @@ function drawLineChart(){
             .attr('width', 12)
             .attr('height', 12)
             .attr('class', function (d){
-                return "tooltip legend _"+d.replaceAll(" ", "")
+                return "legendLine _"+d.replaceAll(" ", "")
             })
             .attr('fill', function(d, i){
                 return colorScale(d);

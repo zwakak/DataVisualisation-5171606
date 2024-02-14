@@ -134,6 +134,12 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol",
                 return (obj.year === selectedYear);
             });
         }
+
+
+        const color = d3.scaleOrdinal()
+            .domain(Array.from(new Set(data.map(e=>e.region))).sort())
+            .range(d3.schemeCategory10);
+
         if(selectedRegions){
             data = data.filter(function (obj) {
                 return selectedRegions.includes(obj.region);
@@ -141,9 +147,6 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol",
         }
         var regions = Array.from(new Set(data.map(e=>e.region))).sort()
 
-        const color = d3.scaleOrdinal()
-            .domain(regions)
-            .range(d3.schemeCategory10);
         // Add X axis
         //
 
@@ -369,7 +372,7 @@ function drawScatterPlot(selectedYear = "2000", selectedParameter = "alcohol",
 
             .append('text')
             .attr('class', function (d){
-                return "legend _"+d.replaceAll(" ", "")
+                return "tooltip legend _"+d.replaceAll(" ", "")
             })
             .attr("padding", "0px")
             .text(function(d){

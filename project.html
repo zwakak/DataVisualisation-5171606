@@ -35,7 +35,7 @@
 
                 <div class="col-md-12 col-sm-4 mix">
 
-                  <!--SECTION - COLORPLETH MAP-->
+                  <!--SECTION - choropleth MAP-->
 
                   <h3>Introduction</h3>
                   <p>Life Expectancy is an important measure of a population's general health and well-being.
@@ -50,7 +50,7 @@
                   <br>
                   <h3>World Health at a Glance: A Geographical Exploration of Life Expectancy and Mortality Rates</h3>
                   <br>
-                  <p>The following colorpleth map provides a powerful overview of global health disparities by
+                  <p>The following choropleth map provides a powerful overview of global health disparities by
                   visualizing the spatial distribution of important health indicators such as life expectancy, adult mortality, and infant deaths.
                   Darker colors refers to higher values whereas lighter ones refers to lower values depending on the parameter being viewed,
                     enabling dynamic exploration of health outcomes worldwide.
@@ -74,9 +74,9 @@
                   </select>
 
                   </div>
-                  <div id="colorpleth"></div>
+                  <div id="choropleth"></div>
 
-                  <!--END - COLORPLETH MAP-->
+                  <!--END - choropleth MAP-->
 
                   <br><br>
                   <!--SECTION - HORIZONTAL PLOT-->
@@ -195,13 +195,14 @@
                     have higher average life expectancies and lower variability in life expectancy between the first and third quartiles,
                     with minimum and maximum life expectancies also being higher than in developing countries</p>
                   <br>
-                  <br>
                   <div class="selects-wrapper">
                     <label for="yearSelectBox" style="margin: 10px"><span>Choose a Year </span></label>
                     <select id="yearSelectBox">
                     </select>
 
                   </div>
+                  <br>
+                  <br>
                   <div id="box"></div>
                   <!--END - BOX PLOT-->
 
@@ -246,7 +247,7 @@
 <script src="js/scripts.js"></script>
 
 
-<script src="js/project/colorpleth.js"></script>
+<script src="js/project/choropleth.js"></script>
 <script src="js/lc_select.js"></script>
 
 <script>
